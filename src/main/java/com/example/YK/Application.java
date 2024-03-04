@@ -13,7 +13,7 @@ public class Application extends javafx.application.Application {
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Лабораторная работа № x");
         stage.setScene(scene);
-        stage.show();
+        stage.show(); //test
     }
 
     public static void main(String[] args) {
