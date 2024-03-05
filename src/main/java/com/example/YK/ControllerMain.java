@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -23,16 +24,20 @@ public class ControllerMain {
     protected void onb1(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Scr1.fxml"));
         mainpane.setCenter(loader.load());
+        mainpane.setRight(null);
 
     }
     @FXML
-    protected void onb4(ActionEvent event) throws IOException {
+    protected void onb3(ActionEvent event) throws IOException {
         FXMLLoader infoscrfxml = new FXMLLoader(getClass().getResource("Scr2.fxml"));
-        Scene sc = new Scene(infoscrfxml.load(),200,400);
         Stage infoscr = new Stage();
         infoscr.setTitle("Информация");
-        infoscr.setScene(sc);
+        infoscr.setScene(new Scene(infoscrfxml.load()));
         infoscr.show();
 
+    }
+    @FXML
+    protected void onb4(ActionEvent event) {
+        javafx.application.Platform.exit();
     }
 }
