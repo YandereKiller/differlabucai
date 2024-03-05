@@ -15,4 +15,5 @@ public class ControllerScr1 {
     protected void ont(ActionEvent event){
         test1.setText("Test Successful");
     }
+
 }
