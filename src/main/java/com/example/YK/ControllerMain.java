@@ -14,6 +14,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControllerMain {
+    public void loadscreen(String fxmlname, BorderPane pane) throws IOException {
+        FXMLLoader scr = new FXMLLoader(getClass().getResource(fxmlname));
+        pane.setCenter(scr.load());
+        pane.setRight(null);
+    }
     @FXML
     private Button b1,b2,b3,b4;
 
@@ -22,9 +27,12 @@ public class ControllerMain {
 
     @FXML
     protected void onb1(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scr1.fxml"));
-        mainpane.setCenter(loader.load());
-        mainpane.setRight(null);
+        loadscreen("Scr1.fxml",mainpane);
+
+    }
+    @FXML
+    private void onb2(ActionEvent event) throws IOException {
+        loadscreen("Scr3.fxml",mainpane);
 
     }
     @FXML
