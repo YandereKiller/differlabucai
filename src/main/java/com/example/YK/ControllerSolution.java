@@ -22,7 +22,10 @@ public class ControllerSolution extends ControllerMain {
     private TextField varfield;
     @FXML
     protected void onbcont(ActionEvent event) throws IOException {
-        var = Integer.parseInt(varfield.getText());
+        if (Integer.parseInt(varfield.getText()) > 0 && Integer.parseInt(varfield.getText()) < 16)
+            var = Integer.parseInt(varfield.getText());
+        else
+
         loadscreen("ScrTeor2.fxml",mainpane);
     }
 }
