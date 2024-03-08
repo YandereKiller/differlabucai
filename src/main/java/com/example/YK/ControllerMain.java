@@ -4,11 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -21,56 +23,54 @@ public class ControllerMain {
         pane.setCenter(scr.load());
 
     }
-    int levelteor = 0; /*Для функционирования кнопки возврата путем контроля "уровня", на котором находится пользователь,
-                        это нужно т.к. кнопка возврата находится всегда на основной панели*/
-    int levelsol = 0;
+    int var; //Номер выбранного варианта
     @FXML
-    protected Button b1,b2,b3,b4,backb;
-
+    protected Button b1,b2,b3,b4,backb,bcont;
     @FXML
-    protected BorderPane mainpane;
+    private TextField varfield;
 
-    @FXML
-    protected void onbackb(ActionEvent event) throws IOException {
-        if (levelteor > 0) {
-            switch (levelteor) {
-                default:
-                    loadscreen("ScrTeor"+levelsol +".fxml",mainpane);
-                case 1:
-                    mainpane.setTop(null);
-                    loadscreen("ScrMain.fxml",mainpane);
-            }
-
-        }
-        else {
-            switch (levelsol) {
-                default:
-                    loadscreen("ScrSol"+levelteor+".fxml",mainpane);
-                case 1:
-                    mainpane.setTop(null);
-                    loadscreen("ScrMain.fxml",mainpane);
-            }
-        }
-
-    }
     @FXML
     protected void onb1(ActionEvent event) throws IOException { //Переключение на экран теории
-        loadscreen("ScrTeor1.fxml",mainpane);
-        levelteor++;
-        backb.setVisible(true);
+        Application.set_anc_teor(0);
+
     }
     @FXML
-    private void onb2(ActionEvent event) throws IOException {  //Экран решения
-        loadscreen("ScrSol1.fxml",mainpane);
-        levelsol++;
-        backb.setVisible(true);
+    private void onb2(ActionEvent event) throws IOException {  //Экран выбора варианта
+        FXMLLoader varscrfxml = new FXMLLoader(getClass().getResource("ScrVarSel.fxml"));
+        Stage varscr = new Stage();
+        varscr.setTitle("Выбор варианта");
+        varscr.setScene(new Scene(varscrfxml.load()));
+        varscr.initModality(Modality.WINDOW_MODAL);
+        varscr.initOwner(Application.root.getScene().getWindow());
+        varscr.show();
+    }
+    @FXML
+    protected void onbcont(ActionEvent event) throws IOException { //Функция выбора варианта -> загрузка окна решения
+        Alert err = new Alert(Alert.AlertType.WARNING);
+        err.setTitle("Неправильный номер");
+        err.setContentText("Неправильно введен номер варианта (число от 1 до 15)");
+        try {
+            if (Integer.parseInt(varfield.getText()) > 0 && Integer.parseInt(varfield.getText()) < 16) {
+                var = Integer.parseInt(varfield.getText());
+                ((Node) event.getSource()).getScene().getWindow().hide();
+                Application.set_anc_sol(0);
+
+            } else
+                err.show();
+        } catch(Exception e) {
+            err.show();
+            }
+
+
     }
     @FXML
     protected void onb3(ActionEvent event) throws IOException { //Всплывающее окно с информацией
         FXMLLoader infoscrfxml = new FXMLLoader(getClass().getResource("Scr2.fxml"));
         Stage infoscr = new Stage();
         infoscr.setTitle("Информация");
-        infoscr.setScene(new Scene(infoscrfxml.load()));     
+        infoscr.setScene(new Scene(infoscrfxml.load()));
+        infoscr.initModality(Modality.WINDOW_MODAL);
+        infoscr.initOwner(Application.root.getScene().getWindow());
         infoscr.show();
 
     }
@@ -80,6 +80,8 @@ public class ControllerMain {
         Stage exitscr = new Stage();
         exitscr.setTitle("Выход");
         exitscr.setScene(new Scene(exitscrfxml.load()));
+        exitscr.initModality(Modality.WINDOW_MODAL);
+        exitscr.initOwner(Application.root.getScene().getWindow());
         exitscr.show();
     }
     @FXML

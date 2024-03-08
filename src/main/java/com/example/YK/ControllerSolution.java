@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -14,18 +15,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ControllerSolution extends ControllerMain {
-    int var = 0;
-    @FXML
-    private Button bcont;
-    @FXML
-    private TextField varfield;
-    @FXML
-    protected void onbcont(ActionEvent event) throws IOException {
-        if (Integer.parseInt(varfield.getText()) > 0 && Integer.parseInt(varfield.getText()) < 16)
-            var = Integer.parseInt(varfield.getText());
-        else
+public class ControllerSolution  {
 
-        loadscreen("ScrTeor2.fxml",mainpane);
-    }
 }
