@@ -25,7 +25,7 @@ public class ControllerMain {
     }
     int var; //Номер выбранного варианта
     @FXML
-    protected Button b1,b2,b3,b4,backb,bcont;
+    protected Button b1,b2,b3,b4,bcont;
     @FXML
     private TextField varfield;
 
@@ -42,6 +42,7 @@ public class ControllerMain {
         varscr.setScene(new Scene(varscrfxml.load()));
         varscr.initModality(Modality.WINDOW_MODAL);
         varscr.initOwner(Application.root.getScene().getWindow());
+        varscr.setResizable(false);
         varscr.show();
     }
     @FXML
@@ -71,6 +72,7 @@ public class ControllerMain {
         infoscr.setScene(new Scene(infoscrfxml.load()));
         infoscr.initModality(Modality.WINDOW_MODAL);
         infoscr.initOwner(Application.root.getScene().getWindow());
+        infoscr.setResizable(false);
         infoscr.show();
 
     }
@@ -82,6 +84,7 @@ public class ControllerMain {
         exitscr.setScene(new Scene(exitscrfxml.load()));
         exitscr.initModality(Modality.WINDOW_MODAL);
         exitscr.initOwner(Application.root.getScene().getWindow());
+        exitscr.setResizable(false);
         exitscr.show();
     }
     @FXML

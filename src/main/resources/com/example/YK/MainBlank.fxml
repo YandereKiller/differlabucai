@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.YK.ControllerMain"
-            prefHeight="720" prefWidth="1280">
+<BorderPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerMain">
     <top>
         <HBox prefHeight="50.0">
-            <Button fx:id="b3" onAction="#onb3" prefHeight="25" prefWidth="125" text="О программе" translateX="990.0" translateY="10.0" BorderPane.alignment="CENTER" />
-            <Button fx:id="b4" onAction="#onb4" prefHeight="25" prefWidth="125" text="Выход" translateX="1010.0" translateY="10.0" BorderPane.alignment="CENTER" />
+            <Button fx:id="b4" onAction="#onb4" prefHeight="25" prefWidth="125" text="Выход" translateX="1140.0" translateY="10.0" BorderPane.alignment="CENTER" />
         </HBox>
     </top>
 

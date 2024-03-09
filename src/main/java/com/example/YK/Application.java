@@ -47,6 +47,8 @@ public class Application extends javafx.application.Application {
         root = (BorderPane) FXMLLoader.load(getClass().getResource("MainBlank.fxml"));
         root.getChildren().add(mainscr.get(0));
         stage.setScene(new Scene(root));
+        stage.setTitle("Лабораторная работа № x");
+        stage.setResizable(false);
         stage.show();
     }
     public static void set_anc_sol(int idx) {

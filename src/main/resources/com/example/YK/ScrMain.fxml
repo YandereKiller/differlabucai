@@ -3,19 +3,38 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="690" prefWidth="1280" translateY="30.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerMain">
-<BorderPane prefHeight="690" prefWidth="1280" AnchorPane.topAnchor="0.0">
+<AnchorPane prefHeight="665.0" prefWidth="1280" translateY="30.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerMain">
+<BorderPane prefHeight="689.0" prefWidth="1280" AnchorPane.topAnchor="0.0">
     <right>
-    <VBox alignment="CENTER" prefHeight="695.0" prefWidth="587.0" spacing="150.0">
+    <VBox alignment="CENTER" prefHeight="540.0" prefWidth="587.0" spacing="150.0" translateY="40.0">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
         <Button fx:id="b1" onAction="#onb1" prefHeight="100" prefWidth="400" text="Теоретическая часть" />
         <Button fx:id="b2" onAction="#onb2" prefHeight="100" prefWidth="400" text="Выполнение работы" />
+        <Button fx:id="b3" onAction="#onb3" prefHeight="25" prefWidth="125" text="О программе" translateX="216.0" translateY="-5.0" />
     </VBox>
     </right>
+    <top>
+        <VBox translateX="20.0">
+            <Label text="Лабораторная работа № x">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Перед выполнением работы рекомендуется ознакомиться с теоретическими сведениями">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
 
+        </VBox>
+
+    </top>
 
     </BorderPane>
         </AnchorPane>
