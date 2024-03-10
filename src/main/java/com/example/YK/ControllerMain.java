@@ -23,7 +23,6 @@ public class ControllerMain {
         pane.setCenter(scr.load());
 
     }
-    int var; //Номер выбранного варианта
     @FXML
     protected Button b1,b2,b3,b4,bcont;
     @FXML
@@ -52,7 +51,7 @@ public class ControllerMain {
         err.setContentText("Неправильно введен номер варианта (число от 1 до 15)");
         try {
             if (Integer.parseInt(varfield.getText()) > 0 && Integer.parseInt(varfield.getText()) < 16) {
-                var = Integer.parseInt(varfield.getText());
+                Application.var = Integer.parseInt(varfield.getText());
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 Application.set_anc_sol(0);
 

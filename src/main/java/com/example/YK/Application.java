@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Application extends javafx.application.Application {
     static BorderPane root;
+    static int var;
     static List<AnchorPane> anc_sol = new ArrayList<AnchorPane>(){
         {
             try {
