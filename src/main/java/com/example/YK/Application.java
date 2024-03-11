@@ -3,17 +3,21 @@ package com.example.YK;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Application extends javafx.application.Application {
     static BorderPane root;
-    static int var;
+
+
     static List<AnchorPane> anc_sol = new ArrayList<AnchorPane>(){
         {
             try {
@@ -27,6 +31,7 @@ public class Application extends javafx.application.Application {
         {
             try {
                 add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrTeor1.fxml")));
+                add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrTeor2.fxml")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -43,6 +48,13 @@ public class Application extends javafx.application.Application {
     };
     public static int idx_cur_sol = 0;
     public static int idx_cur_teor = 0;
+    static int var;
+    static Map<Integer, Image> soltask1 = new HashMap<>() {
+        {
+
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTeor/Ex1_1.png")));
+        }
+    };
     @Override
     public void start(Stage stage) throws IOException {
         root = (BorderPane) FXMLLoader.load(getClass().getResource("MainBlank.fxml"));
