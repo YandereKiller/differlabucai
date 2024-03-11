@@ -12,8 +12,8 @@
       </font></Label>
    <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="818.0">
       <children>
-         <Button fx:id="backb" mnemonicParsing="false" onAction="#onbackb" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" />
-          <Button fx:id="nextb" prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
+         <Button mnemonicParsing="false" onAction="#onbackb1" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" />
+          <Button prefHeight="25" onAction="#onnextb1" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
       </children>
    </HBox>
     <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE">
