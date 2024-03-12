@@ -21,7 +21,7 @@
     <ScrollPane  prefHeight="581.0" prefWidth="782.0">
         <content>
             <VBox>
-        <ImageView fx:id="t" fitHeight="917.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="917.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../ImagesTeor/Teor1.png" />
             </image></ImageView>

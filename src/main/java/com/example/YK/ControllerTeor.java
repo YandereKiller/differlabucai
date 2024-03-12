@@ -11,8 +11,6 @@ public class ControllerTeor {
     @FXML
     private Label test1;
     @FXML
-    protected void ont(ActionEvent event){ test1.setText("Test Successful");}
-    @FXML
     protected void onbackb1(ActionEvent event){
         Application.root.getChildren().remove(Application.anc_teor.get(0));
         Application.root.getChildren().add(Application.mainscr.get(0));

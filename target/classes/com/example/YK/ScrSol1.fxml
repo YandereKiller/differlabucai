@@ -10,6 +10,6 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.YK.ControllerSolution"
             prefHeight="720" prefWidth="1280">
-    <Label text="dsff"/>
+    <Label text="Задание 1 "/>
 
 </AnchorPane>

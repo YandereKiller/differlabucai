@@ -21,17 +21,25 @@
         </children>
     </HBox>
     <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE">
-        <Tab text="ЛНДУ" >
+        <Tab text="ЛНДУ-2" >
             <ScrollPane  prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
-                        <ImageView fitHeight="917.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="897.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../ImagesTeor/Teor1.png" />
+                                <Image url="@../../../ImagesTeor/Teor3.png" />
                             </image></ImageView>
-                        <ImageView fitHeight="466.0" fitWidth="767.0">
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </Tab>
+        <Tab text ="ЛНДУ-2 со спец. правой частью">
+            <ScrollPane  prefHeight="581.0" prefWidth="782.0">
+                <content>
+                    <VBox>
+                        <ImageView fitHeight="1074.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../ImagesTeor/Teor2.png" />
+                                <Image url="@../../../ImagesTeor/Teor4.png" />
                             </image></ImageView>
 
                     </VBox>
