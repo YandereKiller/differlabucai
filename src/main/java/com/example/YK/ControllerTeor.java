@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
+
 public class ControllerTeor {
     @FXML
     private Button bb1;
@@ -24,6 +26,11 @@ public class ControllerTeor {
     protected void onbackb2(ActionEvent event){
         Application.root.getChildren().remove(Application.anc_teor.get(1));
         Application.root.getChildren().add(Application.anc_teor.get(0));
+    }
+    @FXML
+    protected void backtomain(ActionEvent event){
+        Application.root.getChildren().remove(Application.anc_teor.get(1));
+        Application.root.getChildren().add(Application.mainscr.get(0));
     }
 
 }

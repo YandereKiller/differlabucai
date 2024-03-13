@@ -14,6 +14,7 @@
         <children>
             <Button mnemonicParsing="false" onAction="#onbackb2" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" />
             <Button prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
+            <Button prefHeight="25" text="Вернуться в главное меню" onAction="#backtomain" translateX="30.0" translateY="10.0" />
         </children>
     </HBox>
     <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE">
