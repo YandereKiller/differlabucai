@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Application extends javafx.application.Application {
-    static BorderPane root;
+    static AnchorPane root;
 
 
     static List<AnchorPane> anc_sol = new ArrayList<AnchorPane>(){
@@ -57,11 +57,12 @@ public class Application extends javafx.application.Application {
     };
     @Override
     public void start(Stage stage) throws IOException {
-        root = (BorderPane) FXMLLoader.load(getClass().getResource("MainBlank.fxml"));
+        root = (AnchorPane) FXMLLoader.load(getClass().getResource("MainBlank.fxml"));
         root.getChildren().add(mainscr.get(0));
         stage.setScene(new Scene(root));
         stage.setTitle("Лабораторная работа № x");
-        stage.setResizable(false);
+        stage.setMinHeight(root.getPrefHeight());
+        stage.setMinWidth(root.getPrefWidth());
         stage.show();
     }
     public static void set_anc_sol(int idx) {

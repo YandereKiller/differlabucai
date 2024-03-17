@@ -5,20 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
- <Label layoutX="410.0" layoutY="53.0" text="Линейные однородные дифференциальные уравнения&#10;второго порядка с постоянными коэффициентами">
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
+ <Label alignment="TOP_CENTER" layoutX="198.0" layoutY="53.0" text="Линейные однородные дифференциальные уравнения второго порядка с постоянными коэффициентами" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="53.0">
       <font>
          <Font size="18.0" />
       </font></Label>
-   <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="818.0">
+   <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="818.0" AnchorPane.bottomAnchor="667.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="0.0">
       <children>
          <Button mnemonicParsing="false" onAction="#onbackb1" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" />
-          <Button prefHeight="25" onAction="#onnextb1" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
+          <Button onAction="#onnextb1" prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
       </children>
    </HBox>
-    <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE">
-        <Tab text="ЛОДУ-2" >
-    <ScrollPane  prefHeight="581.0" prefWidth="782.0">
+    <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="114.0">
+        <Tab text="ЛОДУ-2">
+    <ScrollPane prefHeight="581.0" prefWidth="782.0">
         <content>
             <VBox>
         <ImageView fitHeight="917.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
@@ -35,7 +35,7 @@
     </ScrollPane>
         </Tab>
         <Tab text="Примеры решения задач">
-            <ScrollPane  prefHeight="581.0" prefWidth="782.0">
+            <ScrollPane prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
                         <ImageView fitHeight="121.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">

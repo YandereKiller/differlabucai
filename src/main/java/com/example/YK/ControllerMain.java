@@ -23,6 +23,7 @@ public class ControllerMain {
         pane.setCenter(scr.load());
 
     }
+
     @FXML
     protected Button b1,b2,b3,b4,bcont;
     @FXML
