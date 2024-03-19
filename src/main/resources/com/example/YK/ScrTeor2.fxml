@@ -5,8 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
-    <Label layoutX="337.0" layoutY="53.0" text="Линейные неоднородные дифференциальные уравнения второго&#10;порядка с постоянными коэффициентами и специальной правой частью">
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
+    <Label alignment="CENTER" layoutX="183.0" layoutY="50.0" prefHeight="54.0" prefWidth="916.0" text="Линейные неоднородные дифференциальные уравнения второго порядка с постоянными коэффициентами &#10;и специальной правой частью" AnchorPane.bottomAnchor="616.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="50.0">
         <font>
             <Font size="18.0" />
         </font></Label>
@@ -14,15 +14,16 @@
         <children>
             <Button mnemonicParsing="false" onAction="#onbackb2" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" />
             <Button prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" />
-            <Button prefHeight="25" text="Вернуться в главное меню" onAction="#backtomain" translateX="30.0" translateY="10.0" />
+            <Button onAction="#backtomain" prefHeight="25" text="Вернуться в главное меню" translateX="30.0" translateY="10.0" />
         </children>
     </HBox>
-    <TabPane layoutX="249.0" layoutY="114.0" prefHeight="581.0" prefWidth="782.0" tabClosingPolicy="UNAVAILABLE">
+    <VBox alignment="CENTER" layoutX="183.0" layoutY="107.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="104.0">
+    <TabPane layoutX="249.0" layoutY="114.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" tabClosingPolicy="UNAVAILABLE">
         <Tab text="ЛНДУ-2">
             <ScrollPane prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
-                        <ImageView fitHeight="897.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="897.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
                             <image>
                                 <Image url="@../../../ImagesTeor/Teor3.png" />
                             </image></ImageView>
@@ -34,7 +35,7 @@
             <ScrollPane prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
-                        <ImageView fitHeight="1074.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="1074.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
                             <image>
                                 <Image url="@../../../ImagesTeor/Teor4.png" />
                             </image></ImageView>
@@ -47,19 +48,19 @@
             <ScrollPane prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
-                        <ImageView fitHeight="121.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="121.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
                             <image>
                                 <Image url="@../../../ImagesTeor/Ex1_1.png" />
                             </image></ImageView>
-                        <ImageView fitHeight="226.0" fitWidth="767.0">
+                        <ImageView fitHeight="226.0" fitWidth="1195.0">
                             <image>
                                 <Image url="@../../../ImagesTeor/Ex1_2.png" />
                             </image></ImageView>
-                        <ImageView fitHeight="204.0" fitWidth="767.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="204.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true">
                             <image>
                                 <Image url="@../../../ImagesTeor/Ex2.png" />
                             </image></ImageView>
-                        <ImageView fitHeight="480.0" fitWidth="767.0">
+                        <ImageView fitHeight="480.0" fitWidth="1195.0">
                             <image>
                                 <Image url="@../../../ImagesTeor/Ex3.png" />
                             </image></ImageView>
@@ -69,4 +70,5 @@
             </ScrollPane>
         </Tab>
     </TabPane>
+    </VBox>
 </AnchorPane>

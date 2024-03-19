@@ -61,8 +61,8 @@ public class Application extends javafx.application.Application {
         root.getChildren().add(mainscr.get(0));
         stage.setScene(new Scene(root));
         stage.setTitle("Лабораторная работа № x");
-        stage.setMinHeight(root.getPrefHeight());
-        stage.setMinWidth(root.getPrefWidth());
+        stage.setMinHeight(800);
+        stage.setMinWidth(1300);
         stage.show();
     }
     public static void set_anc_sol(int idx) {
