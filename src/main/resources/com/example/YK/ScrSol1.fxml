@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.YK.ControllerSolution"
-            prefHeight="720" prefWidth="1280">
-    <Label text="Задание 1 "/>
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution">
+    <Label layoutX="125.0" layoutY="72.0" text="Задание 1&#10;Решить линейное однородное дифференциальное уравнение: ">
+      <font>
+         <Font name="Microsoft YaHei" size="20.0" />
+      </font></Label>
+   <ImageView fx:id="task1img" fitHeight="110.0" fitWidth="227.0" layoutX="125.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../ImagesTasks/11a.png" />
+      </image>
+   </ImageView>
+    <Label layoutX="588.0" layoutY="195.0" text="Этапы решения:&#10;1.Составить характеристическое уравнение&#10;2.Определить знак дискриминанта характеристического уравнения">
+        <font>
+            <Font name="Microsoft YaHei" size="20.0" />
+        </font></Label>
+    <Label layoutX="588.0" layoutY="285.0" text="Выберите знак дискриминанта">
+    <font>
+        <Font name="Microsoft YaHei" size="12.0" />
+    </font></Label>
+    <Label layoutX="588.0" layoutY="306.0" text="3.Решить характеристическое уравнение&#10;4.Записать общее решение ЛОДУ&#10;Ответ:">
+        <font>
+            <Font name="Microsoft YaHei" size="20.0" />
+        </font></Label>
+   <ChoiceBox fx:id="discrim" layoutX="777.0" layoutY="281.0" prefWidth="150.0" />
+    <HBox fx:id="h" layoutX="589.0" layoutY="408.0" prefHeight="60.0" prefWidth="526.0">
+        <Label text="Поле для ввода ответа появится после выбора знака дискриминанта">
+            <font>
+                <Font name="Microsoft YaHei" size="15.0" />
+            </font></Label>
+    </HBox>
+
+
+
 
 </AnchorPane>

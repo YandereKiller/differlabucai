@@ -8,23 +8,29 @@
 <BorderPane prefHeight="720.0" prefWidth="1280" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
     <right>
     <VBox alignment="CENTER" prefHeight="651.0" prefWidth="603.0" spacing="150.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
-        <Button fx:id="b1" onAction="#onb1" prefHeight="100" prefWidth="400" text="Теоретическая часть" />
-        <Button fx:id="b2" onAction="#onb2" prefHeight="100" prefWidth="400" text="Выполнение работы" />
+        <Button fx:id="b1" onAction="#onb1" prefHeight="100" prefWidth="400" text="Теоретическая часть">
+               <font>
+                  <Font name="Microsoft YaHei" size="15.0" />
+               </font></Button>
+        <Button fx:id="b2" onAction="#onb2" prefHeight="100" prefWidth="400" text="Выполнение работы">
+            <font>
+                <Font name="Microsoft YaHei" size="15.0" />
+            </font></Button>
     </VBox>
     </right>
     <top>
         <VBox alignment="TOP_LEFT" translateX="20.0">
             <Label text="Лабораторная работа № x">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Microsoft YaHei" size="18.0" />
                </font></Label>
             <Label text="Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Microsoft YaHei" size="18.0" />
                </font></Label>
             <Label text="Перед выполнением работы рекомендуется ознакомиться с теоретическими сведениями">
                <font>
-                  <Font size="10.0" />
+                  <Font name="Microsoft YaHei" size="10.0" />
                </font></Label>
         </VBox>
 
@@ -32,7 +38,10 @@
       <bottom>
          <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-           <Button fx:id="b3" alignment="CENTER" onAction="#onb3" prefHeight="25" prefWidth="125" text="О программе" translateX="-10.0" translateY="-40.0" />
+           <Button fx:id="b3" alignment="CENTER" onAction="#onb3" prefHeight="25" prefWidth="125" text="О программе" translateX="-10.0" translateY="-40.0">
+               <font>
+                   <Font name="Microsoft YaHei" size="12.0" />
+               </font></Button>
             </children>
          </HBox>
       </bottom>
