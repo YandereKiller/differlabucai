@@ -19,13 +19,11 @@ public class ControllerTeor {
     }
     @FXML
     protected void onnextb1(ActionEvent event){
-        Application.root.getChildren().remove(Application.anc_teor.get(0));
-        Application.root.getChildren().add(Application.anc_teor.get(1));
+        Application.set_anc_teor(1);
     }
     @FXML
     protected void onbackb2(ActionEvent event){
-        Application.root.getChildren().remove(Application.anc_teor.get(1));
-        Application.root.getChildren().add(Application.anc_teor.get(0));
+        Application.set_anc_teor(0);
     }
     @FXML
     protected void backtomain(ActionEvent event){

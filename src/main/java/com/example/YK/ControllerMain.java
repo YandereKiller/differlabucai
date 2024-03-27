@@ -17,22 +17,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControllerMain {
-    public void loadscreen(String fxmlname, BorderPane pane) throws IOException {  //Для загрузки окон
-        pane.setRight(null); pane.setLeft(null); pane.setBottom(null);
-        FXMLLoader scr = new FXMLLoader(getClass().getResource(fxmlname));
-        pane.setCenter(scr.load());
-
-    }
 
     @FXML
-    protected Button b1,b2,b3,b4,bcont;
+    protected Button b1,b2,b3,bcont;
     @FXML
     private TextField varfield;
 
     @FXML
-    protected void onb1(ActionEvent event) throws IOException { //Переключение на экран теории
+    protected void onb1(ActionEvent event) throws IOException {//Переключение на экран теории
+        Application.root.getChildren().remove(Application.mainscr.get(0));
         Application.set_anc_teor(0);
-
     }
     @FXML
     private void onb2(ActionEvent event) throws IOException {  //Экран выбора варианта
@@ -75,17 +69,6 @@ public class ControllerMain {
         infoscr.setResizable(false);
         infoscr.show();
 
-    }
-    @FXML
-    protected void onb4(ActionEvent event) throws IOException {   //Всплывающее окно выхода
-        FXMLLoader exitscrfxml = new FXMLLoader(getClass().getResource("ScrEx.fxml"));
-        Stage exitscr = new Stage();
-        exitscr.setTitle("Выход");
-        exitscr.setScene(new Scene(exitscrfxml.load()));
-        exitscr.initModality(Modality.WINDOW_MODAL);
-        exitscr.initOwner(Application.root.getScene().getWindow());
-        exitscr.setResizable(false);
-        exitscr.show();
     }
     @FXML
     protected void onexyes(ActionEvent event) {  //Выход

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox  alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
+<HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <Label layoutX="588.0" layoutY="306.0" text="y">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
@@ -13,7 +13,19 @@
         <font>
             <Font name="Microsoft YaHei" size="10.0" />
         </font></Label>
-    <Label layoutX="588.0" layoutY="306.0" text="(x) = C">
+    <Label layoutX="588.0" layoutY="306.0" text="(x) = e">
+        <font>
+            <Font name="Microsoft YaHei" size="20.0" />
+        </font></Label>
+    <TextField fx:id="discrim3a" prefHeight="20.0" prefWidth="25.0">
+        <font>
+            <Font name="Microsoft YaHei" size="10.0" />
+        </font></TextField>
+    <Label layoutX="588.0" layoutY="306.0" text="x">
+        <font>
+            <Font name="Microsoft YaHei" size="15.0" />
+        </font></Label>
+    <Label layoutX="588.0" layoutY="306.0" text="(C">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
@@ -21,23 +33,15 @@
         <font>
             <Font name="Microsoft YaHei" size="10.0" />
         </font></Label>
-    <Label layoutX="588.0" layoutY="306.0" text="e">
+    <Label layoutX="588.0" layoutY="306.0" text="cos">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
-    <TextField fx:id="discrim1k1" prefHeight="20.0" prefWidth="25.0">
-      <font>
-         <Font name="Microsoft YaHei" size="10.0" />
-      </font></TextField>
-    <Label layoutX="588.0" layoutY="306.0" text="x">
+    <TextField fx:id="discrim3b1" prefHeight="20.0" prefWidth="25.0" translateY="5.0">
         <font>
-            <Font name="Microsoft YaHei" size="15.0" />
-        </font></Label>
-    <Label layoutX="588.0" layoutY="306.0" text="+">
-        <font>
-            <Font name="Microsoft YaHei" size="20.0" />
-        </font></Label>
-    <Label layoutX="588.0" layoutY="306.0" text="C">
+            <Font name="Microsoft YaHei" size="10.0" />
+        </font></TextField>
+    <Label layoutX="588.0" layoutY="306.0" text="x+C">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
@@ -45,16 +49,16 @@
         <font>
             <Font name="Microsoft YaHei" size="10.0" />
         </font></Label>
-    <Label layoutX="588.0" layoutY="306.0" text="e">
+    <Label layoutX="588.0" layoutY="306.0" text="sin">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
-    <TextField fx:id="discrim1k2" prefHeight=".0" prefWidth="25.0">
-      <font>
-         <Font name="Microsoft YaHei" size="10.0" />
-      </font></TextField>
-    <Label layoutX="588.0" layoutY="306.0" text="x">
+    <TextField fx:id="discrim3b2" prefHeight="20.0" prefWidth="25.0" translateY="5.0">
         <font>
-            <Font name="Microsoft YaHei" size="15.0" />
+            <Font name="Microsoft YaHei" size="10.0" />
+        </font></TextField>
+    <Label layoutX="588.0" layoutY="306.0" text="x)">
+        <font>
+            <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
 </HBox>

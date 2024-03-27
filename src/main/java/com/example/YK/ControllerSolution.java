@@ -26,6 +26,8 @@ public class ControllerSolution implements Initializable {
         {
             try {
                 add((HBox) FXMLLoader.load(getClass().getResource("discrim1.fxml")));
+                add((HBox) FXMLLoader.load(getClass().getResource("discrim2.fxml")));
+                add((HBox) FXMLLoader.load(getClass().getResource("discrim3.fxml")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -43,16 +45,17 @@ public class ControllerSolution implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         discrim.getItems().addAll("D>0", "D=0", "D<0");
-        discrim.setOnAction(actionEvent -> {
-            switch(discrim.getValue()){
-                case "D>0":
 
-                    h.getChildren().clear();
-                    h.getChildren().add(discrimsrt.get(0));
-                case"D=0":
-                case"D<0":
+        discrim.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue ov, Number value, Number new_value)
+            {
+                h.getChildren().clear();
+                h.getChildren().add(discrimsrt.get(new_value.intValue()));
             }
         });
-    }
-
+        }
 }
+
+
