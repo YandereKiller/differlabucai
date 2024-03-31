@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +23,8 @@ public class Application extends javafx.application.Application {
         {
             try {
                 add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol1.fxml")));
+                add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol2.fxml")));
+                add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol3.fxml")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -48,11 +51,49 @@ public class Application extends javafx.application.Application {
     };
     public static int idx_cur_sol = 0;
     public static int idx_cur_teor = 0;
-    static int var;
-    static Map<Integer, Image> soltask1 = new HashMap<>() {
-        {
+    public static int var = 1;
 
-            put(1,new Image(getClass().getResourceAsStream("/ImagesTeor/Ex1_1.png")));
+    static Map<Integer, Image> soltask1 = new HashMap<>() { // (var, task)
+        {
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11a.png")));
+            put(2,new Image(getClass().getResourceAsStream("/ImagesTasks/21a.png")));
+        }
+    };
+    static Map<Integer, Image> soltask2 = new HashMap<>() { // (var, task)
+        {
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11b.png")));
+        }
+    };
+    static Map<Integer, Image> soltask3 = new HashMap<>() { // (var, task)
+        {
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11c.png")));
+        }
+    };
+    static Map<Integer, int[]> answers1a = new HashMap<>(){ // {D,x1,x2...} 1 - D>0, 0 - D = 0, -1 - D<0
+        {
+            put(1,new int[]{-1,0,2,2});
+            put(2,new int[]{1,2,-1});
+        }
+    };
+    static Map<Integer, int[]> answers2 = new HashMap<>(){ // {D,x1,x2...} 1 - D>0, 0 - D = 0, -1 - D<0
+        {
+            put(1,new int[]{0,5});
+        }
+    };
+    static Map<Integer, int[]> answers3 = new HashMap<>(){ // {D,x1,x2...} 1 - D>0, 0 - D = 0, -1 - D<0
+        {
+            put(1,new int[]{1,-1,-2});
+        }
+    };
+    static List<HBox> discrimsrt = new ArrayList<HBox>(){
+        {
+            try {
+                add((HBox) FXMLLoader.load(getClass().getResource("discrim1.fxml")));
+                add((HBox) FXMLLoader.load(getClass().getResource("discrim2.fxml")));
+                add((HBox) FXMLLoader.load(getClass().getResource("discrim3.fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     };
     @Override
@@ -65,6 +106,7 @@ public class Application extends javafx.application.Application {
         stage.setMinWidth(1300);
         stage.show();
     }
+
     public static void set_anc_sol(int idx) {
         if(idx_cur_sol == 0) root.getChildren().remove(mainscr.get(0));
         root.getChildren().remove(anc_sol.get(idx_cur_sol));

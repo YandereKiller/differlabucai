@@ -5,8 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane onMouseEntered="#ims" prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution">
-    <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="72.0" text="Задание 1&#10;Решить линейное однородное дифференциальное уравнение: " AnchorPane.bottomAnchor="594.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="72.0">
+<AnchorPane onMouseEntered="#ims" prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution2">
+    <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="72.0" text="Задание 2&#10;Решить линейное однородное дифференциальное уравнение: " AnchorPane.bottomAnchor="594.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="72.0">
       <font>
          <Font name="Microsoft YaHei" size="20.0" />
       </font></Label>

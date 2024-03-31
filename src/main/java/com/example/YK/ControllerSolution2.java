@@ -24,7 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerSolution implements Initializable {
+public class ControllerSolution2 implements Initializable {
+
     @FXML
     protected ImageView task1img;
     @FXML
@@ -44,12 +45,12 @@ public class ControllerSolution implements Initializable {
 
             }
         });
-        }
-        @FXML
-        protected void ims(MouseEvent event){
-            task1img.setImage(Application.soltask1.get(Application.var));
-        }
+    }
+    @FXML
+    protected void ims(MouseEvent event){
+        task1img.setImage(Application.soltask2.get(Application.var));
+        ControllerAnsw.tasknow = 2;
+    }
 
 }
-
 

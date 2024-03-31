@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox  alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
+<HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerAnsw">
     <Label layoutX="588.0" layoutY="306.0" text="y">
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
@@ -57,4 +57,9 @@
         <font>
             <Font name="Microsoft YaHei" size="15.0" />
         </font></Label>
+    <Button maxHeight="40.0" maxWidth="218.0" mnemonicParsing="false" onAction="#answch" prefHeight="40.0" prefWidth="218.0" text="Далее" translateX="60.0">
+        <font>
+            <Font name="Microsoft YaHei" size="20.0" />
+        </font>
+    </Button>
 </HBox>
