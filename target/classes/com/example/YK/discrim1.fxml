@@ -25,11 +25,11 @@
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
-    <TextField fx:id="discrim1k1" prefHeight="20.0" prefWidth="25.0">
+    <TextField fx:id="discrim1k1" prefHeight="20.0" prefWidth="25.0" translateY="-8.0">
       <font>
          <Font name="Microsoft YaHei" size="10.0" />
       </font></TextField>
-    <Label layoutX="588.0" layoutY="306.0" text="x">
+    <Label layoutX="588.0" layoutY="306.0" text="x" translateY="-8.0">
         <font>
             <Font name="Microsoft YaHei" size="15.0" />
         </font></Label>
@@ -49,11 +49,11 @@
         <font>
             <Font name="Microsoft YaHei" size="20.0" />
         </font></Label>
-    <TextField fx:id="discrim1k2" prefHeight=".0" prefWidth="25.0">
+    <TextField fx:id="discrim1k2" prefHeight=".0" prefWidth="25.0" translateY="-8.0">
       <font>
          <Font name="Microsoft YaHei" size="10.0" />
       </font></TextField>
-    <Label layoutX="588.0" layoutY="306.0" text="x">
+    <Label layoutX="588.0" layoutY="306.0" text="x" translateY="-8.0">
         <font>
             <Font name="Microsoft YaHei" size="15.0" />
         </font></Label>
