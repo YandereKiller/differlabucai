@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -17,7 +18,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControllerMain {
-
     @FXML
     protected Button b1,b2,b3,bcont;
     @FXML
@@ -46,8 +46,11 @@ public class ControllerMain {
         err.setContentText("Неправильно введен номер варианта (число от 1 до 15)");
         try {
             if (Integer.parseInt(varfield.getText()) > 0 && Integer.parseInt(varfield.getText()) < 16) {
-                Application.var = Integer.parseInt(varfield.getText());
+                 Application.var = Integer.parseInt(varfield.getText());
                 ((Node) event.getSource()).getScene().getWindow().hide();
+                Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol1.fxml"))); //Только сейчас подгружаются fxml, тк теперь ими получено новое значение Application.var
+                Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol2.fxml")));
+                Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol3.fxml")));
                 Application.set_anc_sol(0);
 
             } else

@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="YK" options="--add-exports javafx.graphics/com.sun.javafx.css=com.example.differentialequationslab" />
+      <module name="YK" options="" />
     </option>
   </component>
 </project>

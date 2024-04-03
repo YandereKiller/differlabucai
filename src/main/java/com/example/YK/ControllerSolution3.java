@@ -20,11 +20,14 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ControllerSolution3 implements Initializable {
+    static Map<Integer, Image> soltask3 = new HashMap<>(){
+        {
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11c.png")));
+        }
+    };  // (var, task)
 
     @FXML
     protected ImageView task1img;
@@ -34,7 +37,8 @@ public class ControllerSolution3 implements Initializable {
     protected ChoiceBox<String> discrim;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        discrim.getItems().addAll("D>0", "D=0", "D<0");
+        task1img.setImage(soltask3.get(Application.var));
+        discrim.getItems().addAll("Вид 1", "Вид 2", "Вид 3");
         discrim.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
             @Override
@@ -46,10 +50,6 @@ public class ControllerSolution3 implements Initializable {
             }
         });
     }
-    @FXML
-    protected void ims(MouseEvent event){
-        task1img.setImage(Application.soltask3.get(Application.var));
-        ControllerAnsw.tasknow = 3;
-    }
+
 
 }
