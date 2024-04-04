@@ -28,12 +28,21 @@ public class ControllerSolution implements Initializable{
         {
             put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11a.png")));
             put(2,new Image(getClass().getResourceAsStream("/ImagesTasks/21a.png")));
+            put(3,new Image(getClass().getResourceAsStream("/ImagesTasks/31a.png")));
+            put(4,new Image(getClass().getResourceAsStream("/ImagesTasks/41a.png")));
+            put(5,new Image(getClass().getResourceAsStream("/ImagesTasks/51a.png")));
+            put(6,new Image(getClass().getResourceAsStream("/ImagesTasks/61a.png")));
+            put(7,new Image(getClass().getResourceAsStream("/ImagesTasks/71a.png")));
+            put(8,new Image(getClass().getResourceAsStream("/ImagesTasks/81a.png")));
+            put(9,new Image(getClass().getResourceAsStream("/ImagesTasks/91a.png")));
+            put(10,new Image(getClass().getResourceAsStream("/ImagesTasks/101a.png")));
+            put(11,new Image(getClass().getResourceAsStream("/ImagesTasks/111a.png")));
+            put(12,new Image(getClass().getResourceAsStream("/ImagesTasks/121a.png")));
+            put(13,new Image(getClass().getResourceAsStream("/ImagesTasks/131a.png")));
+            put(14,new Image(getClass().getResourceAsStream("/ImagesTasks/141a.png")));
+            put(15,new Image(getClass().getResourceAsStream("/ImagesTasks/151a.png")));
         }
     };  // (var, task)
-    public static int vari;
-    public void changevar(int vari){
-        this.vari = vari;
-    }
 
     @FXML
     protected ImageView task1img;

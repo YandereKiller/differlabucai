@@ -108,6 +108,7 @@ public class ControllerAnsw {
             @Override
             public void handle(WindowEvent windowEvent) {
                 Application.set_anc_sol(tasknow);
+                tasknow++;
                 mistakes = false;
             }
         });
@@ -127,6 +128,8 @@ public class ControllerAnsw {
             if (discrim2k == null && discrim2k == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { // D>0
                 if (answers1a.get(Application.var)[0] == 1 && (Integer.parseInt(discrim1k1.getText()) == answers1a.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers1a.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers1a.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers1a.get(Application.var)[1] )) {
                     loadnexttask();
+                    discrim1k1.clear();
+                    discrim1k2.clear();
                 } else if (answers1a.get(Application.var)[0] != 1) { //Если знак дискриминанта в ответе (3 контейнера map, значения int[0]) не совпадает с тем, что выбрал пользователь (вид уравнения в ответе), то программа сообщит об этом.
                     Alert err = new Alert(Alert.AlertType.ERROR);
                     err.setTitle("Неправильный ответ");
@@ -146,6 +149,7 @@ public class ControllerAnsw {
             if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
                 if (answers1a.get(Application.var)[0] == 0 && Integer.parseInt(discrim2k.getText()) == answers1a.get(Application.var)[1]) {
                     loadnexttask();
+                    discrim2k.clear();
                 } else if (answers1a.get(Application.var)[0] != 0) {
                     Alert err = new Alert(Alert.AlertType.ERROR);
                     err.setTitle("Неправильный ответ");
@@ -165,6 +169,9 @@ public class ControllerAnsw {
             if (discrim1k1 == null && discrim1k2 == null && discrim2k == null) { //D<0
                 if (answers1a.get(Application.var)[0] == -1 && Integer.parseInt(discrim3a.getText()) == answers1a.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers1a.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers1a.get(Application.var)[2]) {
                     loadnexttask();
+                    discrim3a.clear();
+                    discrim3b1.clear();
+                    discrim3b2.clear();
                 } else if (answers1a.get(Application.var)[0] != -1) {
                     Alert err = new Alert(Alert.AlertType.ERROR);
                     err.setTitle("Неправильный ответ");
@@ -184,6 +191,8 @@ public class ControllerAnsw {
                 if (discrim2k == null && discrim2k == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { // D>0
                     if (answers2.get(Application.var)[0] == 1 && (Integer.parseInt(discrim1k1.getText()) == answers2.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers2.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers2.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers2.get(Application.var)[1])) {
                         loadnexttask();
+                        discrim1k1.clear();
+                        discrim1k2.clear();
                     } else if (answers2.get(Application.var)[0] != 1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ1");
@@ -203,6 +212,7 @@ public class ControllerAnsw {
                 if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
                     if (answers2.get(Application.var)[0] == 0 && Integer.parseInt(discrim2k.getText()) == answers2.get(Application.var)[1]) {
                         loadnexttask();
+                        discrim2k.clear();
                     } else if (answers2.get(Application.var)[0] != 0) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
@@ -222,6 +232,9 @@ public class ControllerAnsw {
                 if (discrim1k1 == null && discrim1k2 == null && discrim2k == null) { //D<0
                     if (answers2.get(Application.var)[0] == -1 && Integer.parseInt(discrim3a.getText()) == answers2.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers2.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers2.get(Application.var)[2]) {
                         loadnexttask();
+                        discrim3a.clear();
+                        discrim3b1.clear();
+                        discrim3b2.clear();
                     } else if (answers2.get(Application.var)[0] != -1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
@@ -241,6 +254,8 @@ public class ControllerAnsw {
                 if (discrim2k == null && discrim2k == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { // D>0
                     if (answers3.get(Application.var)[0] == 1 && (Integer.parseInt(discrim1k1.getText()) == answers3.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers3.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers3.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers3.get(Application.var)[1])) {
                         loadnexttask();
+                        discrim1k1.clear();
+                        discrim1k2.clear();
                     } else if (answers3.get(Application.var)[0] != 1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
@@ -260,6 +275,7 @@ public class ControllerAnsw {
                 if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
                     if (answers3.get(Application.var)[0] == 0 && Integer.parseInt(discrim2k.getText()) == answers3.get(Application.var)[1]) {
                         loadnexttask();
+                        discrim2k.clear();
                     } else if (answers3.get(Application.var)[0] != 0) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
@@ -279,6 +295,9 @@ public class ControllerAnsw {
                 if (discrim1k1 == null && discrim1k2 == null && discrim2k == null) { //D<0
                     if (answers3.get(Application.var)[0] == -1 && Integer.parseInt(discrim3a.getText()) == answers3.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers3.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers3.get(Application.var)[2]) {
                         loadnexttask();
+                        discrim3a.clear();
+                        discrim3b1.clear();
+                        discrim3b2.clear();
                     } else if (answers3.get(Application.var)[0] != -1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");

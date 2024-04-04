@@ -26,6 +26,20 @@ public class ControllerSolution2 implements Initializable {
     static Map<Integer, Image> soltask2 = new HashMap<>(){
         {
             put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11b.png")));
+            put(2,new Image(getClass().getResourceAsStream("/ImagesTasks/21b.png")));
+            put(3,new Image(getClass().getResourceAsStream("/ImagesTasks/31b.png")));
+            put(4,new Image(getClass().getResourceAsStream("/ImagesTasks/41b.png")));
+            put(5,new Image(getClass().getResourceAsStream("/ImagesTasks/51b.png")));
+            put(6,new Image(getClass().getResourceAsStream("/ImagesTasks/61b.png")));
+            put(7,new Image(getClass().getResourceAsStream("/ImagesTasks/71b.png")));
+            put(8,new Image(getClass().getResourceAsStream("/ImagesTasks/81b.png")));
+            put(9,new Image(getClass().getResourceAsStream("/ImagesTasks/91b.png")));
+            put(10,new Image(getClass().getResourceAsStream("/ImagesTasks/101b.png")));
+            put(11,new Image(getClass().getResourceAsStream("/ImagesTasks/111b.png")));
+            put(12,new Image(getClass().getResourceAsStream("/ImagesTasks/121b.png")));
+            put(13,new Image(getClass().getResourceAsStream("/ImagesTasks/131b.png")));
+            put(14,new Image(getClass().getResourceAsStream("/ImagesTasks/141b.png")));
+            put(15,new Image(getClass().getResourceAsStream("/ImagesTasks/151b.png")));
         }
     }; // (var, task)
 
