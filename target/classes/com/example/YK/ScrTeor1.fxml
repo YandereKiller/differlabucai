@@ -5,30 +5,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
- <Label alignment="CENTER" layoutX="150.0" layoutY="53.0" prefHeight="27.0" prefWidth="980.0" text="Линейные однородные дифференциальные уравнения второго порядка с постоянными коэффициентами" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="53.0">
+<AnchorPane fx:id="ancteor1" onMouseEntered="#ts" prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
+ <Label alignment="TOP_CENTER" layoutX="150.0" layoutY="53.0" prefHeight="27.0" prefWidth="980.0" text="Линейные однородные дифференциальные уравнения второго порядка с постоянными коэффициентами" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="53.0">
       <font>
          <Font name="Microsoft YaHei" size="18.0" />
       </font></Label>
    <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="818.0" AnchorPane.bottomAnchor="667.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="0.0">
       <children>
-         <Button mnemonicParsing="false" onAction="#onbackb1" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0" >
+         <Button mnemonicParsing="false" onAction="#onbackb1" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0">
              <font>
                  <Font name="Microsoft YaHei" size="12.0" />
              </font></Button>
-          <Button onAction="#onnextb1" prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0" >
+          <Button onAction="#onnextb1" prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0">
               <font>
                   <Font name="Microsoft YaHei" size="12.0" />
               </font></Button>
       </children>
    </HBox>
-    <VBox alignment="CENTER" layoutX="182.0" layoutY="90.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="182.0" AnchorPane.topAnchor="90.0">
-    <TabPane layoutX="36.0" layoutY="79.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="NEVER">
+    <VBox alignment="CENTER" layoutX="182.0" layoutY="90.0" maxHeight="924.0" maxWidth="1374.0" prefHeight="616.0" prefWidth="916.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="182.0" AnchorPane.topAnchor="90.0">
+    <TabPane fx:id="tabteor1" layoutX="36.0" layoutY="79.0" maxHeight="1080" maxWidth="1405" prefHeight="616.0" prefWidth="916.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
         <Tab text="ЛОДУ-2">
-    <ScrollPane maxHeight="616.0" maxWidth="955.0" prefHeight="616.0" prefWidth="955.0">
+    <ScrollPane maxHeight="1080" maxWidth="1405" prefHeight="616.0" prefWidth="916.0">
         <content>
             <VBox alignment="CENTER">
-        <ImageView fitHeight="1165.0" fitWidth="1200.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+        <ImageView fx:id="teor1img1" fitHeight="1800.0" fitWidth="916.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
             <image>
                 <Image url="@../../../ImagesTeor/TeorLODU2.jpg" />
             </image></ImageView>
@@ -37,22 +37,19 @@
     </ScrollPane>
         </Tab>
         <Tab text="Примеры решения задач">
-            <ScrollPane maxHeight="616.0" maxWidth="955.0" prefHeight="616.0" prefWidth="955.0">
+            <ScrollPane maxHeight="1080" maxWidth="1405" prefHeight="616.0" prefWidth="916.0" >
                 <content>
                     <VBox alignment="CENTER">
-                        <ImageView fitHeight="190.0" fitWidth="902.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                        <ImageView fx:id="teor1img2" fitHeight="1800.0" fitWidth="916.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
-                                <Image url="@../../../ImagesTeor/ExLODU2_1.jpg" />
+                                <Image url="@../../../ImagesTeor/ExLODU2.png" />
                             </image></ImageView>
-                        <ImageView fitHeight="937.0" fitWidth="902.0" preserveRatio="true" VBox.vgrow="ALWAYS">
-                            <image>
-                                <Image url="@../../../ImagesTeor/ExLODU2_2.jpg" />
-                            </image></ImageView>
-
                     </VBox>
                 </content>
             </ScrollPane>
         </Tab>
 </TabPane>
     </VBox>
+   <Label fx:id="width" layoutX="37.0" layoutY="236.0" prefHeight="25.0" prefWidth="56.0" text="Label" />
+   <Label fx:id="height" layoutX="32.0" layoutY="268.0" prefHeight="17.0" prefWidth="56.0" text="Label" />
 </AnchorPane>
