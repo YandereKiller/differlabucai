@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor2">
-    <Label alignment="CENTER" layoutX="139.0" layoutY="53.0" prefHeight="54.0" prefWidth="1002.0" text="Линейные неоднородные дифференциальные уравнения второго порядка &#10;с постоянными коэффициентами и специальной правой частью" AnchorPane.bottomAnchor="613.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="53.0">
+    <Label alignment="TOP_CENTER" layoutX="139.0" layoutY="53.0" prefHeight="54.0" prefWidth="1002.0" text="Линейные неоднородные дифференциальные уравнения второго порядка &#10;с постоянными коэффициентами и специальной правой частью" AnchorPane.bottomAnchor="613.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="53.0">
         <font>
             <Font name="Microsoft YaHei" size="18.0" />
         </font></Label>
@@ -22,52 +22,27 @@
                 </font></Button>
         </children>
     </HBox>
-    <VBox alignment="CENTER" layoutX="183.0" layoutY="107.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="104.0">
-    <TabPane layoutX="249.0" layoutY="114.0" maxHeight="616.0" maxWidth="916.0" prefHeight="616.0" prefWidth="916.0" tabClosingPolicy="UNAVAILABLE">
+    <VBox alignment="CENTER" layoutX="183.0" layoutY="107.0" maxHeight="1080.0" maxWidth="1405.0" prefHeight="616.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="104.0">
+    <TabPane fx:id="tabteor2" layoutX="249.0" layoutY="114.0" maxHeight="1080.0" maxWidth="1405.0" prefHeight="616.0" prefWidth="916.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
         <Tab text="ЛНДУ-2">
-            <ScrollPane prefHeight="581.0" prefWidth="782.0">
+            <ScrollPane maxHeight="1080.0" maxWidth="1405.0" prefHeight="581.0" prefWidth="782.0">
                 <content>
-                    <VBox>
-                        <ImageView fitHeight="897.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
+                    <VBox alignment="CENTER">
+                        <ImageView fx:id="teor2img1" fitHeight="3005.0" fitWidth="1202.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
-                                <Image url="@../../../ImagesTeor/Teor3.png" />
+                                <Image url="@../../../ImagesTeor/TeorLNDU2.jpg" />
                             </image></ImageView>
-                    </VBox>
-                </content>
-            </ScrollPane>
-        </Tab>
-        <Tab text="ЛНДУ-2 со спец. правой частью">
-            <ScrollPane prefHeight="581.0" prefWidth="782.0">
-                <content>
-                    <VBox>
-                        <ImageView fitHeight="1074.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
-                            <image>
-                                <Image url="@../../../ImagesTeor/Teor4.png" />
-                            </image></ImageView>
-
                     </VBox>
                 </content>
             </ScrollPane>
         </Tab>
         <Tab text="Примеры решения задач">
-            <ScrollPane prefHeight="581.0" prefWidth="782.0">
+            <ScrollPane maxHeight="1080.0" maxWidth="1405.0" prefHeight="581.0" prefWidth="782.0">
                 <content>
                     <VBox>
-                        <ImageView fitHeight="121.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="false">
+                        <ImageView fx:id="teor2img2" fitHeight="4680.0" fitWidth="1590.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
-                                <Image url="@../../../ImagesTeor/Ex1_1.png" />
-                            </image></ImageView>
-                        <ImageView fitHeight="226.0" fitWidth="1195.0">
-                            <image>
-                                <Image url="@../../../ImagesTeor/Ex1_2.png" />
-                            </image></ImageView>
-                        <ImageView fitHeight="204.0" fitWidth="1195.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true">
-                            <image>
-                                <Image url="@../../../ImagesTeor/Ex2.png" />
-                            </image></ImageView>
-                        <ImageView fitHeight="480.0" fitWidth="1195.0">
-                            <image>
-                                <Image url="@../../../ImagesTeor/Ex3.png" />
+                                <Image url="@../../../ImagesTeor/ExLNDU2.jpg" />
                             </image></ImageView>
 
                     </VBox>
