@@ -61,7 +61,7 @@ public class ControllerSolution4 implements Initializable {
             add(new Image(getClass().getResourceAsStream("/LnduKinds/lnduright2.png")));
         }
     };
-    private final static List<Integer> randansw = new ArrayList<>(){
+    public final static List<Integer> randansw = new ArrayList<>(){
         {
             add(0); add(1); add(2); add(3); add(4);
         }
@@ -72,6 +72,7 @@ public class ControllerSolution4 implements Initializable {
         }
     };
 
+    public static boolean isrightsel = false;
     public static int sel;
 
     @FXML
@@ -196,17 +197,23 @@ public class ControllerSolution4 implements Initializable {
                             break;
                     }
                 }
+                if(randansw.get(0) == new_value.intValue()){
+                  isrightsel = true;
+                }
+                else{
+                    isrightsel = false;
+                }
                 if(!rbtsbox.isVisible()) rbtsbox.setVisible(true);
             }
         });
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle){
-                if (answbut1.isSelected()) sel = 1;
-                if (answbut2.isSelected()) sel = 2;
-                if (answbut3.isSelected()) sel = 3;
-                if (answbut4.isSelected()) sel = 4;
-                if (answbut5.isSelected()) sel = 5;
+                if (answbut1.isSelected()) sel = 0;
+                if (answbut2.isSelected()) sel = 1;
+                if (answbut3.isSelected()) sel = 2;
+                if (answbut4.isSelected()) sel = 3;
+                if (answbut5.isSelected()) sel = 4;
                 test.setText(String.valueOf(sel) + " " + String.valueOf(randansw.get(0)));
             }
         });

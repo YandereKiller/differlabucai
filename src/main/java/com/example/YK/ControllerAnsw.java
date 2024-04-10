@@ -89,6 +89,16 @@ public class ControllerAnsw {
             put(1,new int[]{1,0,-1});
         }
     };
+    static Map<Integer,int[]> answers5 = new HashMap<>(){
+        {
+            put(1,new int[]{1,0,-1});
+        }
+    };
+    static Map<Integer,int[]> answers6 = new HashMap<>(){
+        {
+            put(1,new int[]{1,0,-1});
+        }
+    };
 
     @FXML
     protected Label mistakelabel;
@@ -320,33 +330,44 @@ public class ControllerAnsw {
                 break;
             case 4:
                 if (discrim2k == null && discrim2k == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { // D>0
-                    if(ControllerSolution4.sel == 1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setContentText("1");
-                        err.show();
-                    }
-                    if(ControllerSolution4.sel == 2){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setContentText("2");
-                        err.show();
-                    }
-                }
-
-
-                if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
-                    if (answers3.get(Application.var)[0] == 0 && Integer.parseInt(discrim2k.getText()) == answers3.get(Application.var)[1]) {
+                    if (answers4.get(Application.var)[0] == 1
+                            && (Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[1])
+                            && ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) {
                         loadnexttask();
-                        discrim2k.clear();
-                    } else if (answers3.get(Application.var)[0] != 0) {
+                        discrim1k1.clear();
+                        discrim1k2.clear();
+                    } else if (answers4.get(Application.var)[0] != 1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
                         err.setContentText("Неправильно определен вид характеристического уравнения");
                         err.show();
                         mistakes = true;
-                    } else {
+                    } else if (!ControllerSolution4.isrightsel) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.setContentText("Неправильно найдено частное решение");
+                        err.show();
+                        mistakes = true;
+                    }
+                }
+
+
+                if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
+                    if (answers4.get(Application.var)[0] == 0
+                            && Integer.parseInt(discrim2k.getText()) == answers4.get(Application.var)[1]
+                            && ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) {
+                        loadnexttask();
+                        discrim2k.clear();
+                    } else if (answers4.get(Application.var)[0] != 0) {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                        mistakes = true;
+                    } else if (!ControllerSolution4.isrightsel) {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно найдено частное решение");
                         err.show();
                         mistakes = true;
                     }
@@ -354,21 +375,23 @@ public class ControllerAnsw {
 
 
                 if (discrim1k1 == null && discrim1k2 == null && discrim2k == null) { //D<0
-                    if (answers3.get(Application.var)[0] == -1 && Integer.parseInt(discrim3a.getText()) == answers3.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers3.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers3.get(Application.var)[2]) {
+                    if (answers4.get(Application.var)[0] == -1
+                            && Integer.parseInt(discrim3a.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers4.get(Application.var)[2]
+                            && ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) {
                         loadnexttask();
                         discrim3a.clear();
                         discrim3b1.clear();
                         discrim3b2.clear();
-                    } else if (answers3.get(Application.var)[0] != -1) {
+                    } else if (answers4.get(Application.var)[0] != -1) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
                         err.setContentText("Неправильно определен вид характеристического уравнения");
                         err.show();
                         mistakes = true;
-                    } else {
+                    } else if (!ControllerSolution4.isrightsel) {
                         Alert err = new Alert(Alert.AlertType.ERROR);
                         err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.setContentText("Неправильно найдено частное решение");
                         err.show();
                         mistakes = true;
                     }
