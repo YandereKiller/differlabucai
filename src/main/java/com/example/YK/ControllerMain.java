@@ -51,6 +51,7 @@ public class ControllerMain {
                 Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol1.fxml"))); //Только сейчас подгружаются fxml, тк теперь ими получено новое значение Application.var
                 Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol2.fxml")));
                 Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol3.fxml")));
+                Application.anc_sol.add((AnchorPane) FXMLLoader.load(getClass().getResource("ScrSol4.fxml")));
                 Application.set_anc_sol(0);
 
             } else

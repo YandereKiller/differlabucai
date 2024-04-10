@@ -66,6 +66,10 @@ public class ControllerSolution implements Initializable{
             }
         });
         }
+        @FXML
+    protected void a(ActionEvent event){
+        Application.set_anc_sol(3);
+        }
 }
 
 

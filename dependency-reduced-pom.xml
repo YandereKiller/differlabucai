@@ -4,7 +4,7 @@
   <groupId>com.example</groupId>
   <artifactId>YK</artifactId>
   <name>DifferentialEquationsLab</name>
-  <version>2.6</version>
+  <version>3.0</version>
   <build>
     <plugins>
       <plugin>

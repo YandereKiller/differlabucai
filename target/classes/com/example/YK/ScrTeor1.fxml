@@ -37,10 +37,10 @@
     </ScrollPane>
         </Tab>
         <Tab text="Примеры решения задач">
-            <ScrollPane maxHeight="1080" maxWidth="1405" prefHeight="616.0" prefWidth="916.0" >
+            <ScrollPane maxHeight="1080" maxWidth="1405" prefHeight="616.0" prefWidth="916.0">
                 <content>
                     <VBox alignment="CENTER">
-                        <ImageView fx:id="teor1img2" fitHeight="1800.0" fitWidth="916.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                        <ImageView fx:id="teor1img2" fitHeight="1697.0" fitWidth="800.0" layoutX="34.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
                                 <Image url="@../../../ImagesTeor/ExLODU2.png" />
                             </image></ImageView>

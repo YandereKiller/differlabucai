@@ -22,7 +22,7 @@ public class ControllerAnsw {
     protected TextField discrim1k1, discrim1k2,
             discrim2k,
             discrim3a, discrim3b1, discrim3b2;
-    public static int tasknow = 1; //Чтобы отслеживать на каком задании находится пользователь
+    public static int tasknow = 4; //Чтобы отслеживать на каком задании находится пользователь
     public static boolean mistakes = false; //Для проверки, была ли допущена ошибка
     public static float points = 0;
     static Map<Integer, int[]> answers1a = new HashMap<>(){
@@ -84,6 +84,11 @@ public class ControllerAnsw {
             put(15,new int[]{-1,-2,3});
         }
     }; // {D,x1,x2...} 1 - D>0, 0 - D = 0, -1 - D<0 (если D<0, то {D,alpha,beta})
+    static Map<Integer,int[]> answers4 = new HashMap<>(){
+        {
+            put(1,new int[]{1,0,-1});
+        }
+    };
 
     @FXML
     protected Label mistakelabel;
@@ -268,6 +273,62 @@ public class ControllerAnsw {
                         err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
                         err.show();
                         mistakes = true;
+                    }
+                }
+
+
+                if (discrim1k1 == null && discrim1k2 == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { //D=0
+                    if (answers3.get(Application.var)[0] == 0 && Integer.parseInt(discrim2k.getText()) == answers3.get(Application.var)[1]) {
+                        loadnexttask();
+                        discrim2k.clear();
+                    } else if (answers3.get(Application.var)[0] != 0) {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                        mistakes = true;
+                    } else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.show();
+                        mistakes = true;
+                    }
+                }
+
+
+                if (discrim1k1 == null && discrim1k2 == null && discrim2k == null) { //D<0
+                    if (answers3.get(Application.var)[0] == -1 && Integer.parseInt(discrim3a.getText()) == answers3.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers3.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers3.get(Application.var)[2]) {
+                        loadnexttask();
+                        discrim3a.clear();
+                        discrim3b1.clear();
+                        discrim3b2.clear();
+                    } else if (answers3.get(Application.var)[0] != -1) {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                        mistakes = true;
+                    } else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.show();
+                        mistakes = true;
+                    }
+                }
+                break;
+            case 4:
+                if (discrim2k == null && discrim2k == null && discrim3a == null && discrim3b1 == null && discrim3b2 == null) { // D>0
+                    if(ControllerSolution4.sel == 1){
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setContentText("1");
+                        err.show();
+                    }
+                    if(ControllerSolution4.sel == 2){
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setContentText("2");
+                        err.show();
                     }
                 }
 
