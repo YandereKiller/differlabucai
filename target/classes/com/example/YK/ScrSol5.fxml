@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution5">
+    <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="29.0" prefHeight="103.0" prefWidth="661.0" text="Задание 4&#10;Решить линейное неоднородное дифференциальное уравнение: " AnchorPane.bottomAnchor="637.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="589.0" AnchorPane.topAnchor="29.0">
+      <font>
+         <Font name="Arial" size="20.0" />
+      </font></Label>
+    <Label alignment="BOTTOM_LEFT" layoutX="30.0" layoutY="620.0" text="Отчет ЛР обязательно должен содержать&#10;указанные этапы решения" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="833.0" AnchorPane.topAnchor="620.0">
+        <font>
+            <Font name="Arial" size="20.0" />
+        </font>
+   </Label>
+   <HBox alignment="TOP_LEFT" layoutX="46.0" layoutY="125.0" prefHeight="110.0" prefWidth="306.0" AnchorPane.bottomAnchor="485.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="125.0">
+      <children>
+         <ImageView fx:id="task1img" fitHeight="110.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
+   <VBox alignment="CENTER_RIGHT" layoutX="576.0" layoutY="92.0" maxHeight="617.0" maxWidth="691.0" prefHeight="607.0" prefWidth="714.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="576.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="92.0" VBox.vgrow="NEVER">
+      <children>
+          <Label prefHeight="118.0" prefWidth="690.0" text="Этапы решения:&#10;1.Составить характеристическое уравнение подходящего ЛОДУ&#10;2.Найти дискриминант характеристического уравнения">
+              <font>
+                  <Font name="Arial" size="20.0" />
+              </font>
+         </Label>
+          <Label prefHeight="17.0" prefWidth="680.0" text="Выберите вид общего решения ЛОДУ на основании полученного дискриминанта" translateX="-10.0">
+          <font>
+              <Font name="Arial" size="12.0" />
+          </font>
+         </Label>
+         <ChoiceBox fx:id="discrim" pickOnBounds="false" prefWidth="150.0" translateX="-540.0" viewOrder="1" />
+          <Label prefHeight="89.0" prefWidth="690.0" text="3.Решить характеристическое уравнение&#10;4.Записать общее решение ЛОДУ из левой части:">
+              <font>
+                  <Font name="Arial" size="20.0" />
+              </font>
+         </Label>
+          <HBox fx:id="h" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="661.0">
+              <Label prefHeight="20.0" prefWidth="696.0" text="Поле для ввода ответа появится после выбора вида уравнения">
+                  <font>
+                      <Font name="Arial" size="15.0" />
+                  </font>
+            </Label>
+          </HBox>
+         <Label prefHeight="27.0" prefWidth="690.0" text="5.Определить вид правой части ЛНДУ">
+            <font>
+               <Font name="Arial" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="textchoose" prefHeight="17.0" prefWidth="680.0" text="Поле для выбора появится после определения вида общего решения ЛОДУ" translateX="-10.0">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font></Label>
+         <ChoiceBox fx:id="lndu" prefWidth="150.0" translateX="-540.0" visible="false" />
+         <ImageView fx:id="lnduimg" fitHeight="38.0" fitWidth="412.0" pickOnBounds="true" preserveRatio="true" translateX="-280.0" translateY="5.0" />
+         <Label prefHeight="27.0" prefWidth="690.0" text="6.Найти частное решение ЛНДУ:">
+            <font>
+               <Font name="Arial" size="20.0" />
+            </font>
+         </Label>
+         <VBox fx:id="rbtsbox" alignment="CENTER_RIGHT" prefHeight="222.0" prefWidth="691.0" spacing="15.0" visible="false">
+            <children>
+               <RadioButton fx:id="answbut1" mnemonicParsing="false" prefHeight="35.0" prefWidth="691.0">
+                  <graphic>
+                     <ImageView fx:id="rbtimg1" fitHeight="35.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="group" />
+                  </toggleGroup></RadioButton>
+               <RadioButton fx:id="answbut2" mnemonicParsing="false" prefHeight="35.0" prefWidth="691.0" toggleGroup="$group">
+                  <graphic>
+                     <ImageView fx:id="rbtimg2" fitHeight="35.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic>
+               </RadioButton>
+               <RadioButton fx:id="answbut3" mnemonicParsing="false" prefHeight="35.0" prefWidth="691.0" toggleGroup="$group">
+                  <graphic>
+                     <ImageView fx:id="rbtimg3" fitHeight="35.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic></RadioButton>
+               <RadioButton fx:id="answbut4" mnemonicParsing="false" prefHeight="35.0" prefWidth="691.0" toggleGroup="$group">
+                  <graphic>
+                     <ImageView fx:id="rbtimg4" fitHeight="32.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic></RadioButton>
+               <RadioButton fx:id="answbut5" mnemonicParsing="false" prefHeight="35.0" prefWidth="691.0" toggleGroup="$group">
+                  <graphic>
+                     <ImageView fx:id="rbtimg5" fitHeight="35.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic></RadioButton>
+            </children>
+         </VBox>
+         <Label prefHeight="27.0" prefWidth="690.0" text="7.Записать общее решение ЛНДУ">
+            <font>
+               <Font name="Arial" size="20.0" />
+            </font>
+         </Label>
+      </children>
+   </VBox>
+   <Label fx:id="test" layoutX="225.0" layoutY="319.0" prefHeight="27.0" prefWidth="56.0" text="0 0" visible="false" />
+
+
+
+
+</AnchorPane>

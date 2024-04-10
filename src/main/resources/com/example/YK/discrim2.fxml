@@ -7,47 +7,47 @@
 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerAnsw">
     <Label layoutX="588.0" layoutY="306.0" text="y">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="0" translateY="15.0">
         <font>
-            <Font name="Microsoft YaHei" size="10.0" />
+            <Font name="Arial" size="10.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="(x) = e">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font></Label>
     <TextField fx:id="discrim2k" prefHeight="20.0" prefWidth="25.0" translateY="-8.0">
         <font>
-            <Font name="Microsoft YaHei" size="10.0" />
+            <Font name="Arial" size="10.0" />
         </font></TextField>
     <Label layoutX="588.0" layoutY="306.0" text="x" translateY="-8.0">
         <font>
-            <Font name="Microsoft YaHei" size="15.0" />
+            <Font name="Arial" size="15.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="(C">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="1" translateY="15.0">
         <font>
-            <Font name="Microsoft YaHei" size="10.0" />
+            <Font name="Arial" size="10.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="+C">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="2" translateY="15.0">
         <font>
-            <Font name="Microsoft YaHei" size="10.0" />
+            <Font name="Arial" size="10.0" />
         </font></Label>
     <Label layoutX="588.0" layoutY="306.0" text="x)">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font></Label>
     <Button maxHeight="40.0" maxWidth="218.0" mnemonicParsing="false" onAction="#answch" prefHeight="40.0" prefWidth="218.0" text="Далее" translateX="40.0">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font>
     </Button>
 </HBox>

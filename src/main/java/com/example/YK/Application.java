@@ -37,8 +37,10 @@ public class Application extends javafx.application.Application {
         discrimsrt.add((HBox) FXMLLoader.load(getClass().getResource("discrim2.fxml")));
         discrimsrt.add((HBox) FXMLLoader.load(getClass().getResource("discrim3.fxml")));
         root.getChildren().add(mainscr.get(0));
+        Image icon = new Image("NSD.jpg");
         stage.setScene(new Scene(root));
-        stage.setTitle("Лабораторная работа № x");
+        stage.setTitle("Лабораторная работа № 2");
+        stage.getIcons().add(icon);
         stage.setMinHeight(800);
         stage.setMinWidth(1300);
         stage.show();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -10,27 +11,27 @@
     <VBox alignment="CENTER" prefHeight="651.0" prefWidth="603.0" spacing="150.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
         <Button fx:id="b1" onAction="#onb1" prefHeight="100" prefWidth="400" text="Теоретическая часть">
                <font>
-                  <Font name="Microsoft YaHei" size="15.0" />
+                  <Font name="Arial" size="15.0" />
                </font></Button>
         <Button fx:id="b2" onAction="#onb2" prefHeight="100" prefWidth="400" text="Выполнение работы">
             <font>
-                <Font name="Microsoft YaHei" size="15.0" />
+                <Font name="Arial" size="15.0" />
             </font></Button>
     </VBox>
     </right>
     <top>
         <VBox alignment="TOP_LEFT" translateX="20.0">
-            <Label text="Лабораторная работа № x">
+            <Label text="Лабораторная работа № 2">
                <font>
-                  <Font name="Microsoft YaHei" size="18.0" />
+                  <Font name="Arial" size="20.0" />
                </font></Label>
             <Label text="Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами">
                <font>
-                  <Font name="Microsoft YaHei" size="18.0" />
+                  <Font name="Arial" size="20.0" />
                </font></Label>
             <Label text="Перед выполнением работы рекомендуется ознакомиться с теоретическими сведениями">
                <font>
-                  <Font name="Microsoft YaHei" size="10.0" />
+                  <Font name="Arial" size="13.0" />
                </font></Label>
         </VBox>
 
@@ -40,10 +41,19 @@
             <children>
            <Button fx:id="b3" alignment="CENTER" onAction="#onb3" prefHeight="25" prefWidth="125" text="О программе" translateX="-10.0" translateY="-40.0">
                <font>
-                   <Font name="Microsoft YaHei" size="12.0" />
+                   <Font name="Arial" size="12.0" />
                </font></Button>
             </children>
          </HBox>
       </bottom>
     </BorderPane>
+   <VBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="160.0" maxHeight="374.0" maxWidth="375.0" prefHeight="374.0" prefWidth="375.0" AnchorPane.bottomAnchor="186.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="754.0" AnchorPane.topAnchor="160.0">
+      <children>
+         <ImageView fitHeight="374.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+            <image>
+               <Image url="@../../../NSD.jpg" />
+            </image>
+         </ImageView>
+      </children>
+   </VBox>
         </AnchorPane>

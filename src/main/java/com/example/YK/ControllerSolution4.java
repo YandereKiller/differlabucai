@@ -16,21 +16,7 @@ import java.util.*;
 public class ControllerSolution4 implements Initializable {
     static Map<Integer, Image> soltask3 = new HashMap<>(){
         {
-            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/11c.png")));
-            put(2,new Image(getClass().getResourceAsStream("/ImagesTasks/21c.png")));
-            put(3,new Image(getClass().getResourceAsStream("/ImagesTasks/31c.png")));
-            put(4,new Image(getClass().getResourceAsStream("/ImagesTasks/41c.png")));
-            put(5,new Image(getClass().getResourceAsStream("/ImagesTasks/51c.png")));
-            put(6,new Image(getClass().getResourceAsStream("/ImagesTasks/61c.png")));
-            put(7,new Image(getClass().getResourceAsStream("/ImagesTasks/71c.png")));
-            put(8,new Image(getClass().getResourceAsStream("/ImagesTasks/81c.png")));
-            put(9,new Image(getClass().getResourceAsStream("/ImagesTasks/91c.png")));
-            put(10,new Image(getClass().getResourceAsStream("/ImagesTasks/101c.png")));
-            put(11,new Image(getClass().getResourceAsStream("/ImagesTasks/111c.png")));
-            put(12,new Image(getClass().getResourceAsStream("/ImagesTasks/121c.png")));
-            put(13,new Image(getClass().getResourceAsStream("/ImagesTasks/131c.png")));
-            put(14,new Image(getClass().getResourceAsStream("/ImagesTasks/141c.png")));
-            put(15,new Image(getClass().getResourceAsStream("/ImagesTasks/151c.png")));
+            put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
         }
     };  // (var, task)
     private List<Image> blanks1 = new ArrayList<>(){
@@ -42,10 +28,6 @@ public class ControllerSolution4 implements Initializable {
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/b5.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/b6.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/b7.png")));
-        }
-    };
-    private List<Image> blanks2 = new ArrayList<>(){
-        {
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c1.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c2.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c3.png")));
@@ -53,6 +35,18 @@ public class ControllerSolution4 implements Initializable {
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c5.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c6.png")));
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/c7.png")));
+        }
+    };
+    private List<Image> blanks2 = new ArrayList<>(){
+        {
+            add(new Image(getClass().getResourceAsStream("/AnswersBlanks/d1.png")));
+            add(new Image(getClass().getResourceAsStream("/AnswersBlanks/d2.png")));
+            add(new Image(getClass().getResourceAsStream("/AnswersBlanks/d3.png")));
+            add(new Image(getClass().getResourceAsStream("/AnswersBlanks/d4.png")));
+            add(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+            add(new Image(getClass().getResourceAsStream("/Answers/22c.png")));
+            add(new Image(getClass().getResourceAsStream("/Answers/32c.png")));
+            add(new Image(getClass().getResourceAsStream("/Answers/42c.png")));
         }
     };
     private final List<Image> lndukinds = new ArrayList<>(){
@@ -73,7 +67,7 @@ public class ControllerSolution4 implements Initializable {
     };
 
     public static boolean isrightsel = false;
-    public static int sel;
+    public static int sel = -1;
 
     @FXML
     protected ImageView task1img;
@@ -91,9 +85,12 @@ public class ControllerSolution4 implements Initializable {
     protected ImageView lnduimg;
     @FXML
     protected VBox rbtsbox;
+    @FXML
+    protected Label textchoose;
 
     @FXML
     protected Label test;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         task1img.setImage(soltask3.get(Application.var));
@@ -105,50 +102,52 @@ public class ControllerSolution4 implements Initializable {
             {
                 h.getChildren().clear();
                 h.getChildren().add(Application.discrimsrt.get(new_value.intValue()));
-
+                lndu.setVisible(true);
+                textchoose.setText("Выберите вид правой части ЛНДУ (после этого появится поле для выбора ответа)");
             }
         });
         Collections.shuffle(randansw);
         Collections.shuffle(randblank);
-        final int[] currentlndu = new int[1];
         lndu.getItems().addAll("Вид 1", "Вид 2");
         lndu.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> ov, Number value, Number new_value) {
                 lnduimg.setImage(lndukinds.get(new_value.intValue()));
+                group.selectToggle(null);
                 if(new_value.intValue() == 0) {
                     lnduimg.setTranslateX(-280);
+                    isrightsel = true;
                     switch (randansw.get(0)) {
                         case 0:
-                            rbtimg1.setImage(new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
+                            rbtimg1.setImage(new Image(getClass().getResourceAsStream("/Answers/12a.png")));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 1:
-                            rbtimg2.setImage(new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
+                            rbtimg2.setImage(new Image(getClass().getResourceAsStream("/Answers/12a.png")));
                             rbtimg1.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 2:
-                            rbtimg3.setImage(new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
+                            rbtimg3.setImage(new Image(getClass().getResourceAsStream("/Answers/12a.png")));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg1.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 3:
-                            rbtimg4.setImage(new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
+                            rbtimg4.setImage(new Image(getClass().getResourceAsStream("/Answers/12a.png")));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg1.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 4:
-                            rbtimg5.setImage(new Image(getClass().getResourceAsStream("/ImagesTasks/12a.png")));
+                            rbtimg5.setImage(new Image(getClass().getResourceAsStream("/Answers/12a.png")));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
@@ -156,6 +155,7 @@ public class ControllerSolution4 implements Initializable {
                             break;
                     }
                 } else {
+                    isrightsel = false;
                     lnduimg.setTranslateX(-150);
                     lnduimg.setFitWidth(412);
                     lnduimg.setFitHeight(38);
@@ -196,12 +196,6 @@ public class ControllerSolution4 implements Initializable {
                             rbtimg1.setImage(blanks2.get(randblank.get(3)));
                             break;
                     }
-                }
-                if(randansw.get(0) == new_value.intValue()){
-                  isrightsel = true;
-                }
-                else{
-                    isrightsel = false;
                 }
                 if(!rbtsbox.isVisible()) rbtsbox.setVisible(true);
             }

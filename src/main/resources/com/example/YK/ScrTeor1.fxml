@@ -8,17 +8,17 @@
 <AnchorPane fx:id="ancteor1" onMouseEntered="#ts" prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor">
  <Label alignment="TOP_CENTER" layoutX="150.0" layoutY="53.0" prefHeight="27.0" prefWidth="980.0" text="Линейные однородные дифференциальные уравнения второго порядка с постоянными коэффициентами" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="53.0">
       <font>
-         <Font name="Microsoft YaHei" size="18.0" />
+         <Font name="Arial" size="18.0" />
       </font></Label>
    <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="818.0" AnchorPane.bottomAnchor="667.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="0.0">
       <children>
          <Button mnemonicParsing="false" onAction="#onbackb1" prefHeight="25" prefWidth="125" text="Назад" translateX="10.0" translateY="10.0">
              <font>
-                 <Font name="Microsoft YaHei" size="12.0" />
+                 <Font name="Arial" size="12.0" />
              </font></Button>
           <Button onAction="#onnextb1" prefHeight="25" prefWidth="125" text="Далее" translateX="20.0" translateY="10.0">
               <font>
-                  <Font name="Microsoft YaHei" size="12.0" />
+                  <Font name="Arial" size="12.0" />
               </font></Button>
       </children>
    </HBox>
@@ -50,6 +50,6 @@
         </Tab>
 </TabPane>
     </VBox>
-   <Label fx:id="width" layoutX="37.0" layoutY="236.0" prefHeight="25.0" prefWidth="56.0" text="Label" />
-   <Label fx:id="height" layoutX="32.0" layoutY="268.0" prefHeight="17.0" prefWidth="56.0" text="Label" />
+   <Label fx:id="width" layoutX="37.0" layoutY="236.0" prefHeight="25.0" prefWidth="56.0" text="Label" visible="false" />
+   <Label fx:id="height" layoutX="32.0" layoutY="268.0" prefHeight="17.0" prefWidth="56.0" text="Label" visible="false" />
 </AnchorPane>

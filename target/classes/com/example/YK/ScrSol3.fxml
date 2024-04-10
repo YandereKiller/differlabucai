@@ -8,11 +8,11 @@
 <AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution3">
     <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="72.0" text="Задание 3&#10;Решить линейное однородное дифференциальное уравнение: " AnchorPane.bottomAnchor="594.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="72.0">
       <font>
-         <Font name="Microsoft YaHei" size="20.0" />
+         <Font name="Arial" size="20.0" />
       </font></Label>
     <Label alignment="BOTTOM_LEFT" layoutX="125.0" layoutY="552.0" text="Отчет ЛР обязательно должен содержать&#10;указанные этапы решения" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="738.0" AnchorPane.topAnchor="552.0">
         <font>
-            <Font name="Microsoft YaHei" size="20.0" />
+            <Font name="Arial" size="20.0" />
         </font>
    </Label>
    <HBox alignment="TOP_LEFT" layoutX="125.0" layoutY="147.0" prefHeight="54.0" prefWidth="227.0" AnchorPane.bottomAnchor="512.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="928.0" AnchorPane.topAnchor="147.0">
@@ -24,28 +24,28 @@
          </ImageView>
       </children>
    </HBox>
-   <VBox alignment="CENTER_RIGHT" layoutX="573.0" layoutY="142.0" maxHeight="322.0" maxWidth="690.0" prefHeight="322.0" prefWidth="690.0" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="142.0" VBox.vgrow="NEVER">
+   <VBox alignment="CENTER_RIGHT" layoutX="573.0" layoutY="142.0" prefHeight="322.0" prefWidth="690.0" AnchorPane.bottomAnchor="256.0" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="142.0" VBox.vgrow="NEVER">
       <children>
           <Label prefHeight="82.0" prefWidth="698.0" text="Этапы решения:&#10;1.Составить характеристическое уравнение&#10;2.Найти дискриминант характеристического уравнения">
               <font>
-                  <Font name="Microsoft YaHei" size="20.0" />
+                  <Font name="Arial" size="20.0" />
               </font>
          </Label>
           <Label prefHeight="17.0" prefWidth="680.0" text="Выберите вид итогового уравнения на основании полученного дискриминанта" translateX="-10.0">
           <font>
-              <Font name="Microsoft YaHei" size="12.0" />
+              <Font name="Arial" size="12.0" />
           </font>
          </Label>
          <ChoiceBox fx:id="discrim" pickOnBounds="false" prefWidth="150.0" translateX="-540.0" viewOrder="1" />
           <Label prefHeight="81.0" prefWidth="694.0" text="3.Решить характеристическое уравнение&#10;4.Записать общее решение ЛОДУ&#10;Ответ:">
               <font>
-                  <Font name="Microsoft YaHei" size="20.0" />
+                  <Font name="Arial" size="20.0" />
               </font>
          </Label>
           <HBox fx:id="h" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="661.0">
               <Label prefHeight="20.0" prefWidth="696.0" text="Поле для ввода ответа появится после выбора вида итогового уравнения">
                   <font>
-                      <Font name="Microsoft YaHei" size="15.0" />
+                      <Font name="Arial" size="15.0" />
                   </font>
             </Label>
           </HBox>
