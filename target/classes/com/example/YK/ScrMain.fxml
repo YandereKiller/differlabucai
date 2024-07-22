@@ -21,15 +21,15 @@
     </right>
     <top>
         <VBox alignment="TOP_LEFT" translateX="20.0">
-            <Label text="Лабораторная работа № 2">
+            <Label fx:id="text1" text="Лабораторная работа № 2">
                <font>
                   <Font name="Arial" size="20.0" />
                </font></Label>
-            <Label text="Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами">
+            <Label fx:id="text2" text="Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами">
                <font>
                   <Font name="Arial" size="20.0" />
                </font></Label>
-            <Label text="Перед выполнением работы рекомендуется ознакомиться с теоретическими сведениями">
+            <Label fx:id="text3" text="Перед выполнением работы рекомендуется ознакомиться с теоретическими сведениями">
                <font>
                   <Font name="Arial" size="13.0" />
                </font></Label>
@@ -51,7 +51,7 @@
       <children>
          <ImageView fitHeight="374.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
             <image>
-               <Image url="@../../../NSD.jpg" />
+               <Image url="@../../../NSD.png" />
             </image>
          </ImageView>
       </children>

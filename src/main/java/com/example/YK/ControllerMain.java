@@ -9,8 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -22,13 +25,21 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMain {
+public class ControllerMain implements Initializable{
 
 
     @FXML
     protected Button b1, b2, b3, bcont;
     @FXML
     private TextField varfield;
+    @FXML
+    private Label text1, text2, text3;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        text1.getStyleClass().add("label-white");
+        text2.getStyleClass().add("label-white");
+        text3.getStyleClass().add("label-white");
+    }
 
     @FXML
     protected void onb1(ActionEvent event) throws IOException {//Переключение на экран теории
@@ -41,7 +52,10 @@ public class ControllerMain {
         FXMLLoader varscrfxml = new FXMLLoader(getClass().getResource("ScrVarSel.fxml"));
         Stage varscr = new Stage();
         varscr.setTitle("Выбор варианта");
-        varscr.setScene(new Scene(varscrfxml.load()));
+        Scene varsc = new Scene(varscrfxml.load());
+        varsc.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        //varsc.getRoot().getStyleClass().add("no-background");
+        varscr.setScene(varsc);
         varscr.initModality(Modality.WINDOW_MODAL);
         varscr.initOwner(Application.root.getScene().getWindow());
         varscr.setResizable(false);
@@ -72,6 +86,10 @@ public class ControllerMain {
         }
 
 
+    }
+    @FXML
+    protected void onbcontenter(KeyEvent event) throws IOException { //Функция для обработки нажатия кнопки подтверждения варианта клавишей Enter (Реализует метод сверху)
+    if (event.getCode() == KeyCode.ENTER) bcont.fire(); //Метод fire нажимает на кнопку
     }
 
     @FXML

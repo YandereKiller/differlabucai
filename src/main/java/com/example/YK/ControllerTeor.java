@@ -21,9 +21,12 @@ import java.util.ResourceBundle;
 public class ControllerTeor implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { //Для ресайза изображения
+        text1.getStyleClass().add("label-white");
         teor1img1.fitWidthProperty().bind(tabteor1.widthProperty());
         teor1img2.fitWidthProperty().bind(tabteor1.widthProperty());
     }
+    @FXML
+    private Label text1;
     @FXML
     private AnchorPane ancteor1;
     @FXML

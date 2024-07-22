@@ -1,19 +1,15 @@
 package com.example.YK;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Application extends javafx.application.Application {
     static AnchorPane root;
@@ -37,8 +33,10 @@ public class Application extends javafx.application.Application {
         discrimsrt.add((HBox) FXMLLoader.load(getClass().getResource("discrim2.fxml")));
         discrimsrt.add((HBox) FXMLLoader.load(getClass().getResource("discrim3.fxml")));
         root.getChildren().add(mainscr.get(0));
-        Image icon = new Image("NSD.jpg");
-        stage.setScene(new Scene(root));
+        Image icon = new Image("NSD.png");
+        Scene mainscene = new Scene(root);
+        mainscene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        stage.setScene(mainscene);
         stage.setTitle("Лабораторная работа № 2");
         stage.getIcons().add(icon);
         stage.setMinHeight(800);

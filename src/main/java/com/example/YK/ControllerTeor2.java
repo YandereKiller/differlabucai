@@ -3,6 +3,7 @@ package com.example.YK;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 
@@ -12,9 +13,12 @@ import java.util.ResourceBundle;
 public class ControllerTeor2 implements Initializable {
     @Override
     public void initialize(URL url,ResourceBundle resourceBundle){
+        text1.getStyleClass().add("label-white");
         teor2img1.fitWidthProperty().bind(tabteor2.widthProperty());
         teor2img2.fitWidthProperty().bind(tabteor2.widthProperty());
     }
+    @FXML
+    private Label text1;
     @FXML
     private ImageView teor2img1, teor2img2;
     @FXML

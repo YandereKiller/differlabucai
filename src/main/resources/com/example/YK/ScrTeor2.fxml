@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerTeor2">
-    <Label alignment="TOP_CENTER" layoutX="139.0" layoutY="53.0" prefHeight="54.0" prefWidth="1002.0" text="Линейные неоднородные дифференциальные уравнения второго порядка &#10;с постоянными коэффициентами и специальной правой частью" AnchorPane.bottomAnchor="613.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="53.0">
+    <Label fx:id="text1" alignment="TOP_CENTER" layoutX="139.0" layoutY="53.0" prefHeight="54.0" prefWidth="1002.0" text="Линейные неоднородные дифференциальные уравнения второго порядка &#10;с постоянными коэффициентами и специальной правой частью" AnchorPane.bottomAnchor="613.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="53.0">
         <font>
             <Font name="Arial" size="18.0" />
         </font></Label>
