@@ -4,14 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="200" prefWidth="371.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerMain">
-    <Label layoutX="39.0" layoutY="34.0" text="Введите номер вашего варианта (от 1 до 15)">
+<AnchorPane onKeyPressed="#onbcontenter" prefHeight="200" prefWidth="371.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerMain">
+    <Label fx:id="text1" alignment="TOP_CENTER" layoutX="40.0" layoutY="20.0" prefHeight="42.0" prefWidth="293.0" text="Введите номер вашего варианта&#10;(от 1 до 15)" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="38.0">
       <font>
          <Font name="Arial" size="14.0" />
       </font></Label>
-    <TextField fx:id="varfield" layoutX="112.0" layoutY="75.0" />
-    <Button fx:id="bcont" layoutX="65.0" layoutY="120.0" onAction="#onbcont" text="Приступить к выполнению работы">
+    <TextField fx:id="varfield" alignment="CENTER" layoutX="106.0" layoutY="75.0" />
+    <Button fx:id="bcont" layoutX="65.0" layoutY="120.0" onAction="#onbcont" onKeyPressed="#onbcontenter" text="Приступить к выполнению работы">
         <font>
             <Font name="Arial" size="14.0" />
         </font></Button>
+
+    <Label fx:id="text2" visible="false"/>
+    <Label fx:id="text3" visible="false"/>
 </AnchorPane>

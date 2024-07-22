@@ -26,14 +26,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerMain implements Initializable{
-
-
-    @FXML
-    protected Button b1, b2, b3, bcont;
-    @FXML
-    private TextField varfield;
-    @FXML
-    private Label text1, text2, text3;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         text1.getStyleClass().add("label-white");
@@ -41,6 +33,12 @@ public class ControllerMain implements Initializable{
         text3.getStyleClass().add("label-white");
     }
 
+    @FXML
+    protected Button b1, b2, b3, bcont;
+    @FXML
+    private TextField varfield;
+    @FXML
+    private Label text1, text2, text3;
     @FXML
     protected void onb1(ActionEvent event) throws IOException {//Переключение на экран теории
         Application.root.getChildren().remove(Application.mainscr.get(0));

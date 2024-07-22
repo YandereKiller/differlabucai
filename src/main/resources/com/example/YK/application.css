@@ -1,0 +1,123 @@
+/* application.css */
+
+/* Общий стиль приложения */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #fccb90, #d57eeb);
+}
+
+/* Стили для меток */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #4d4d4d;
+}
+.label-white {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+/* Стили для кнопок */
+.button {
+    -fx-background-color: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 16;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #77FFD2 0%, #6297DB 48%, #1EECFF 100%);
+}
+
+/* Стили для панелей меню */
+.menu-bar {
+    -fx-background-color: rgba(240, 240, 240, 0.8);
+}
+
+/* Стили для панели инструментов */
+.tool-bar {
+    -fx-background-color: rgba(224, 224, 224, 0.8);
+}
+
+/* Стили для текстовых полей */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #0078d7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+/* Стили для ChoiceBox */
+.choice-box {
+    -fx-background-color: white;
+    -fx-border-color: #0078d7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+.choice-box .list-cell {
+    -fx-background-color: white;
+}
+
+/* Стили для выпадающего списка ChoiceBox при выборе */
+.choice-box .choice-box-popup .list-view .list-cell {
+    -fx-background-color: white;
+    -fx-border-color: #0078d7;
+}
+
+.choice-box:hover {
+    -fx-border-color: #005a9e;
+}
+
+/* Стили для ScrollPane */
+.scroll-pane {
+    -fx-background: rgba(240, 240, 240, 0.8);
+    -fx-border-color: #cccccc;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(#eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    -fx-background-radius: 10;
+}
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    -fx-background-radius: 10;
+}
+
+/* Стили для TabPane */
+.tab-pane {
+    -fx-tab-min-width: 100px;
+    -fx-tab-max-width: 200px;
+    -fx-tab-min-height: 30px;
+    -fx-tab-max-height: 30px;
+    -fx-background-color: #f0f0f0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #fccb90, #d57eeb);;
+    -fx-background-radius: 10;
+}
+
+.tab-pane .tab {
+    -fx-background-color: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    -fx-border-color: #cccccc;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #4d4d4d;
+}
