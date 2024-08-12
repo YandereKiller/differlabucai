@@ -54,7 +54,6 @@
             <classifier>mac</classifier>
         </dependency>
 
-
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>

@@ -19,6 +19,11 @@ public class ControllerSolution6 implements Initializable {
             put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/12c.png")));
         }
     };  // (var, task)
+    static Map<Integer,Image> answtask = new HashMap<>(){
+        {
+            put(1,new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+        }
+    };
     private List<Image> blanks1 = new ArrayList<>(){
         {
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/b1.png")));
@@ -120,35 +125,35 @@ public class ControllerSolution6 implements Initializable {
                     switch (randansw.get(0)) {
 
                         case 0:
-                            rbtimg1.setImage(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+                            rbtimg1.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks2.get(randblank.get(0)));
                             rbtimg3.setImage(blanks2.get(randblank.get(1)));
                             rbtimg4.setImage(blanks2.get(randblank.get(2)));
                             rbtimg5.setImage(blanks2.get(randblank.get(3)));
                             break;
                         case 1:
-                            rbtimg2.setImage(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+                            rbtimg2.setImage(answtask.get(Application.var));
                             rbtimg1.setImage(blanks2.get(randblank.get(0)));
                             rbtimg3.setImage(blanks2.get(randblank.get(1)));
                             rbtimg4.setImage(blanks2.get(randblank.get(2)));
                             rbtimg5.setImage(blanks2.get(randblank.get(3)));
                             break;
                         case 2:
-                            rbtimg3.setImage(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+                            rbtimg3.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks2.get(randblank.get(0)));
                             rbtimg1.setImage(blanks2.get(randblank.get(1)));
                             rbtimg4.setImage(blanks2.get(randblank.get(2)));
                             rbtimg5.setImage(blanks2.get(randblank.get(3)));
                             break;
                         case 3:
-                            rbtimg4.setImage(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+                            rbtimg4.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks2.get(randblank.get(0)));
                             rbtimg3.setImage(blanks2.get(randblank.get(1)));
                             rbtimg1.setImage(blanks2.get(randblank.get(2)));
                             rbtimg5.setImage(blanks2.get(randblank.get(3)));
                             break;
                         case 4:
-                            rbtimg5.setImage(new Image(getClass().getResourceAsStream("/Answers/12c.png")));
+                            rbtimg5.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks2.get(randblank.get(0)));
                             rbtimg3.setImage(blanks2.get(randblank.get(1)));
                             rbtimg4.setImage(blanks2.get(randblank.get(2)));

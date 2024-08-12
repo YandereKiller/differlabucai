@@ -19,6 +19,11 @@ public class ControllerSolution5 implements Initializable {
             put(1,new Image(getClass().getResourceAsStream("/ImagesTasks/12b.png")));
         }
     };  // (var, task)
+    static Map<Integer,Image> answtask = new HashMap<>(){
+        {
+            put(1,new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+        }
+    };
     private List<Image> blanks1 = new ArrayList<>(){
         {
             add(new Image(getClass().getResourceAsStream("/AnswersBlanks/b1.png")));
@@ -120,35 +125,35 @@ public class ControllerSolution5 implements Initializable {
                     lnduimg.setTranslateX(-280);
                     switch (randansw.get(0)) {
                         case 0:
-                            rbtimg1.setImage(new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+                            rbtimg1.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 1:
-                            rbtimg2.setImage(new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+                            rbtimg2.setImage(answtask.get(Application.var));
                             rbtimg1.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 2:
-                            rbtimg3.setImage(new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+                            rbtimg3.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg1.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 3:
-                            rbtimg4.setImage(new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+                            rbtimg4.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg1.setImage(blanks1.get(randblank.get(2)));
                             rbtimg5.setImage(blanks1.get(randblank.get(3)));
                             break;
                         case 4:
-                            rbtimg5.setImage(new Image(getClass().getResourceAsStream("/Answers/12b.png")));
+                            rbtimg5.setImage(answtask.get(Application.var));
                             rbtimg2.setImage(blanks1.get(randblank.get(0)));
                             rbtimg3.setImage(blanks1.get(randblank.get(1)));
                             rbtimg4.setImage(blanks1.get(randblank.get(2)));
