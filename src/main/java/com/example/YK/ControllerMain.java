@@ -25,13 +25,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMain implements Initializable{
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        text1.getStyleClass().add("label-white");
-        text2.getStyleClass().add("label-white");
-        text3.getStyleClass().add("label-white");
-    }
+public class ControllerMain {
+
 
     @FXML
     protected Button b1, b2, b3, bcont;

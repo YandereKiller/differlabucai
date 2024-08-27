@@ -30,7 +30,7 @@ public class ControllerAnsw {
     public static float points = 0;
     static Map<Integer, int[]> answers1a = new HashMap<>(){
         {
-            put(1,new int[]{-1,0,2,2});
+            put(1,new int[]{-1,0,2});
             put(2,new int[]{1,2,-1});
             put(3,new int[]{1,4,0});
             put(4,new int[]{1,3,2});
@@ -90,16 +90,58 @@ public class ControllerAnsw {
     static Map<Integer,int[]> answers4 = new HashMap<>(){
         {
             put(1,new int[]{1,0,-1});
+            put(2,new int[]{-1,0,6});
+            put(3,new int[]{-1,0,3});
+            put(4,new int[]{-1,-1,6});
+            put(5,new int[]{1,0,2});
+            put(6,new int[]{0,-1});
+            put(7,new int[]{1,0,4});
+            put(8,new int[]{1,0,-3});
+            put(9,new int[]{0,-5});
+            put(10,new int[]{-1,-2,1});
+            put(11,new int[]{0,3});
+            put(12,new int[]{-1,-1,1});
+            put(13,new int[]{-1,7,2});
+            put(14,new int[]{-1,0,1});
+            put(15,new int[]{0,-4});
         }
     };
     static Map<Integer,int[]> answers5 = new HashMap<>(){
         {
             put(1,new int[]{0,6});
+            put(2,new int[]{-1,3,1});
+            put(3,new int[]{-1,-3,1});
+            put(4,new int[]{-1,-4,3});
+            put(5,new int[]{1,4,5});
+            put(6,new int[]{-1,6,2});
+            put(7,new int[]{0,-1});
+            put(8,new int[]{-1,0,3});
+            put(9,new int[]{-1,4,1});
+            put(10,new int[]{1,3,4});
+            put(11,new int[]{0,1});
+            put(12,new int[]{0,-2});
+            put(13,new int[]{0,-3});
+            put(14,new int[]{-1,0,4});
+            put(15,new int[]{1,0,-4});
         }
     };
     static Map<Integer,int[]> answers6 = new HashMap<>(){
         {
             put(1,new int[]{1,-2,4});
+            put(2,new int[]{1,1,2});
+            put(3,new int[]{1,1,2});
+            put(4,new int[]{1,-1,6});
+            put(5,new int[]{-1,0,1});
+            put(6,new int[]{1,-6,4});
+            put(7,new int[]{-1,-3,2});
+            put(8,new int[]{1,0,-5});
+            put(9,new int[]{-1,2,5});
+            put(10,new int[]{-1,0,4});
+            put(11,new int[]{-1,3,5});
+            put(12,new int[]{-1,4,2});
+            put(13,new int[]{-1,-2,4});
+            put(14,new int[]{1,-2,1});
+            put(15,new int[]{0,7});
         }
     };
 

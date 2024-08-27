@@ -13,7 +13,6 @@ import java.util.ResourceBundle;
 public class ControllerTeor2 implements Initializable {
     @Override
     public void initialize(URL url,ResourceBundle resourceBundle){
-        text1.getStyleClass().add("label-white");
         teor2img1.fitWidthProperty().bind(tabteor2.widthProperty());
         teor2img2.fitWidthProperty().bind(tabteor2.widthProperty());
     }

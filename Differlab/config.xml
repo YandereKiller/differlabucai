@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\mrvla\IdeaProjects\differlabucai\target\YK-4.0.jar</jar>
-  <outfile>C:\Users\mrvla\Desktop\Differlab\DifferentialEquations.exe</outfile>
+  <outfile>C:\Users\mrvla\Desktop\DifferentialeqLab\DifferLab.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,13 +13,13 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\mrvla\Desktop\appicon.ico</icon>
+  <icon>C:\Users\mrvla\Desktop\NSD.ico</icon>
   <jre>
-    <path>jdk-21.0.2</path>
-    <bundledJre64Bit>true</bundledJre64Bit>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion></minVersion>
-    <maxVersion></maxVersion>
+    <minVersion>1.0</minVersion>
+    <maxVersion>22.0</maxVersion>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
   </jre>
