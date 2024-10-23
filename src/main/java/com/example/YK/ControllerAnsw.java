@@ -150,9 +150,9 @@ public class ControllerAnsw {
         Scene taskcomplete = new Scene(FXMLLoader.load(getClass().getResource("taskcomplete.fxml")));
         Scene taskfailed = new Scene(FXMLLoader.load(getClass().getResource("taskfailed.fxml")));
         Scene taskfailed2 = new Scene(FXMLLoader.load(getClass().getResource("taskfailed2.fxml")));
-        taskcomplete.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
-        taskfailed.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
-        taskfailed2.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
+        taskcomplete.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        taskfailed.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        taskfailed2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         Stage congrat = new Stage();
 
         if(mistakecount == 0){
