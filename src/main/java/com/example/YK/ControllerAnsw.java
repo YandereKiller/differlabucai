@@ -199,7 +199,6 @@ public class ControllerAnsw {
         if(tasknow == 6) Application.anc_sol.add(FXMLLoader.load(getClass().getResource("Final.fxml")));
         Application.set_anc_sol(tasknow);
         tasknow++;
-        System.out.println(mistakecount +" "+mistakecountoverall +" "+points);
         mistakecount = 0;
     }
     @FXML

@@ -21,7 +21,7 @@
     </right>
     <top>
         <VBox alignment="TOP_LEFT" translateX="20.0">
-            <Label fx:id="text1" text="Лабораторная работа № 2">
+            <Label fx:id="text1" text="Лабораторная работа № 1">
                <font>
                   <Font name="Arial" size="20.0" />
                </font></Label>

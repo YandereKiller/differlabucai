@@ -51,6 +51,20 @@
           </HBox>
       </children>
    </VBox>
+    <HBox alignment="TOP_RIGHT" layoutX="1012.0" layoutY="72.0" prefHeight="39.0" prefWidth="120.0" spacing="5.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="1012.0" AnchorPane.rightAnchor="148.0" AnchorPane.topAnchor="72.0">
+        <children>
+            <Label alignment="TOP_RIGHT" text="Вариант">
+                <font>
+                    <Font name="Arial" size="20.0" />
+                </font>
+            </Label>
+            <Label fx:id="varlab" alignment="TOP_RIGHT" text="0">
+                <font>
+                    <Font name="Arial" size="20.0" />
+                </font>
+            </Label>
+        </children>
+    </HBox>
 
 
 

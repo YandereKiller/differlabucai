@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerFinal">
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerFinal">
    <children>
       <Label alignment="BOTTOM_CENTER" layoutX="322.0" layoutY="553.0" prefHeight="23.0" prefWidth="701.0" text="Ещё раз убедитесь, что отчёт содержит все необходимые пункты решения" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="257.0" AnchorPane.topAnchor="553.0">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Label>
-       <Label layoutX="170.0" layoutY="310.0" text="Вами было решено 6 заданий" AnchorPane.bottomAnchor="387.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="830.0" AnchorPane.topAnchor="310.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label layoutX="170.0" layoutY="349.0" text="Всего было допущено" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="904.0" AnchorPane.topAnchor="349.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label layoutX="170.0" layoutY="385.0" text="Общее количество баллов (округленное):" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="720.0" AnchorPane.topAnchor="385.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label fx:id="pointscountlab" layoutX="571.0" layoutY="385.0" text="0" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="697.0" AnchorPane.topAnchor="385.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label fx:id="mistakecountlab" layoutX="386.0" layoutY="349.0" text="0" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="386.0" AnchorPane.rightAnchor="882.0" AnchorPane.topAnchor="349.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label layoutX="406.0" layoutY="349.0" text="ошибок" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="804.0" AnchorPane.topAnchor="349.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label layoutX="170.0" layoutY="425.0" text="Ваша итоговая оценка:" AnchorPane.bottomAnchor="272.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="894.0" AnchorPane.topAnchor="425.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label fx:id="finalmark" layoutX="400.0" layoutY="425.0" text="0" AnchorPane.bottomAnchor="272.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="868.0" AnchorPane.topAnchor="425.0">
-           <font>
-               <Font name="Arial" size="20.0" />
-           </font>
-       </Label>
-       <Label alignment="TOP_CENTER" layoutX="170.0" layoutY="100.0" text="                      Поздравляем! Вы завершили выполнение лабораторной работы № 2&#10;&#10;Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами" AnchorPane.bottomAnchor="549.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="100.0">
+       <Label alignment="TOP_CENTER" layoutX="170.0" layoutY="100.0" text="                      Поздравляем! Вы завершили выполнение лабораторной работы № 1&#10;&#10;Решение линейных неоднородных дифференциальных уравнений с постоянными коэффициентами" AnchorPane.bottomAnchor="549.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="100.0">
            <font>
                <Font name="Arial" size="20.0" />
            </font>
@@ -65,5 +28,75 @@
             </Button>
          </children>
       </HBox>
+      <VBox alignment="CENTER_LEFT" layoutX="170.0" layoutY="260.0" prefHeight="200.0" prefWidth="448.0" spacing="30.0" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="662.0" AnchorPane.topAnchor="260.0">
+         <children>
+            <HBox prefHeight="20.0" prefWidth="304.0" spacing="5.0">
+               <children>
+                   <Label text="Вами было решено">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+                  <Label fx:id="taskscompletedlab" text="0">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="заданий">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="18.0" prefWidth="304.0" spacing="5.0">
+               <children>
+                   <Label text="Всего было допущено">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label fx:id="mistakecountlab" text="0">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label text="ошибок">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="448.0" spacing="5.0">
+               <children>
+                   <Label text="Общее количество баллов (округленное):">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label fx:id="pointscountlab" text="0">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="448.0" spacing="5.0">
+               <children>
+                   <Label text="Ваша итоговая оценка:">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label fx:id="finalmark" text="0">
+                       <font>
+                           <Font name="Arial" size="20.0" />
+                       </font>
+                   </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
