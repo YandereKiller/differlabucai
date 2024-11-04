@@ -11,9 +11,10 @@ import java.util.ResourceBundle;
 public class ControllerFinal implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        taskscompletedlab.setText(String.valueOf(ControllerAnsw.taskscompleted));
         mistakecountlab.setText(String.valueOf(ControllerAnsw.mistakecountoverall));
-        pointscountlab.setText(String.valueOf(Math.round(ControllerAnsw.points)));
-        switch(Math.round(ControllerAnsw.points)){
+        pointscountlab.setText(String.valueOf((int)ControllerAnsw.points));
+        switch((int)(ControllerAnsw.points)){
             case 4:
                 finalmark.setText("3");
                 break;
@@ -29,7 +30,7 @@ public class ControllerFinal implements Initializable {
         }
     }
     @FXML
-    protected Label mistakecountlab,finalmark,pointscountlab;
+    protected Label mistakecountlab,finalmark,pointscountlab,taskscompletedlab;
     @FXML
     protected void onexitbutton(ActionEvent event){
         javafx.application.Platform.exit();

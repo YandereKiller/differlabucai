@@ -37,7 +37,7 @@ public class Application extends javafx.application.Application {
         Scene mainscene = new Scene(root);
         mainscene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         stage.setScene(mainscene);
-        stage.setTitle("Лабораторная работа № 2");
+        stage.setTitle("Лабораторная работа № 1");
         stage.getIcons().add(icon);
         stage.setMinHeight(800);
         stage.setMinWidth(1300);

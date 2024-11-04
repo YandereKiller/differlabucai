@@ -24,9 +24,10 @@ public class ControllerAnsw {
     protected TextField discrim1k1, discrim1k2,
             discrim2k,
             discrim3a, discrim3b1, discrim3b2;
-    public static int tasknow = 1; //Чтобы отслеживать на каком задании находится пользователь
+    public static int tasknow = 1; //Чтобы отслеживать, на каком задании находится пользователь
     public static int mistakecount = 0; //Для подсчета количества ошибок в одном задании
     public static int mistakecountoverall = 0; //Для подсчета суммарного количества ошибок
+    public static int taskscompleted = 6;
     public static float points = 0;
     static Map<Integer, int[]> answers1a = new HashMap<>(){
         {
@@ -129,19 +130,19 @@ public class ControllerAnsw {
         {
             put(1,new int[]{1,-2,4});
             put(2,new int[]{1,1,2});
-            put(3,new int[]{1,1,2});
-            put(4,new int[]{1,-1,6});
-            put(5,new int[]{-1,0,1});
-            put(6,new int[]{1,-6,4});
-            put(7,new int[]{-1,-3,2});
-            put(8,new int[]{1,0,-5});
-            put(9,new int[]{-1,2,5});
-            put(10,new int[]{-1,0,4});
-            put(11,new int[]{-1,3,5});
-            put(12,new int[]{-1,4,2});
-            put(13,new int[]{-1,-2,4});
-            put(14,new int[]{1,-2,1});
-            put(15,new int[]{0,7});
+            put(3,new int[]{1,-1,6});
+            put(4,new int[]{-1,0,1});
+            put(5,new int[]{1,-6,4});
+            put(6,new int[]{-1,-3,2});
+            put(7,new int[]{1,0,-5});
+            put(8,new int[]{-1,2,5});
+            put(9,new int[]{-1,0,4});
+            put(10,new int[]{-1,3,5});
+            put(11,new int[]{-1,4,2});
+            put(12,new int[]{-1,-2,4});
+            put(13,new int[]{1,-2,1});
+            put(14,new int[]{0,7});
+            put(15,new int[]{-1,0,1});
         }
     };
 
@@ -166,8 +167,8 @@ public class ControllerAnsw {
 
          }
         if(mistakecount > 2){
-            points += 0.25;
             mistakecountoverall += mistakecount;
+            taskscompleted--;
             congrat.setScene(taskfailed2);
 
         }
@@ -198,6 +199,7 @@ public class ControllerAnsw {
         if(tasknow == 6) Application.anc_sol.add(FXMLLoader.load(getClass().getResource("Final.fxml")));
         Application.set_anc_sol(tasknow);
         tasknow++;
+        System.out.println(mistakecount +" "+mistakecountoverall +" "+points);
         mistakecount = 0;
     }
     @FXML
@@ -210,17 +212,25 @@ public class ControllerAnsw {
                     discrim1k1.clear();
                     discrim1k2.clear();
                 } else if (answers1a.get(Application.var)[0] != 1) { //Если знак дискриминанта в ответе (3 контейнера map, значения int[0]) не совпадает с тем, что выбрал пользователь (вид уравнения в ответе), то программа сообщит об этом.
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Неправильно определен вид характеристического уравнения");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                    }
+
                 } else {
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.show();
+                    }
+
                 }
             }
 
@@ -230,17 +240,25 @@ public class ControllerAnsw {
                     loadnexttask();
                     discrim2k.clear();
                 } else if (answers1a.get(Application.var)[0] != 0) {
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Неправильно определен вид характеристического уравнения");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                    }
+
                 } else {
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.show();
+                    }
+
                 }
             }
 
@@ -252,17 +270,25 @@ public class ControllerAnsw {
                     discrim3b1.clear();
                     discrim3b2.clear();
                 } else if (answers1a.get(Application.var)[0] != -1) {
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Неправильно определен вид характеристического уравнения");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Неправильно определен вид характеристического уравнения");
+                        err.show();
+                    }
+
                 } else {
-                    Alert err = new Alert(Alert.AlertType.ERROR);
-                    err.setTitle("Неправильный ответ");
-                    err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                    err.show();
                     mistakecount++;
+                    if(mistakecount > 2) loadnexttask();
+                    else {
+                        Alert err = new Alert(Alert.AlertType.ERROR);
+                        err.setTitle("Неправильный ответ");
+                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                        err.show();
+                    }
+
                 }
             }
             break;
@@ -273,17 +299,23 @@ public class ControllerAnsw {
                         discrim1k1.clear();
                         discrim1k2.clear();
                     } else if (answers2.get(Application.var)[0] != 1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ1");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ1");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
 
@@ -293,17 +325,23 @@ public class ControllerAnsw {
                         loadnexttask();
                         discrim2k.clear();
                     } else if (answers2.get(Application.var)[0] != 0) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
 
@@ -315,17 +353,23 @@ public class ControllerAnsw {
                         discrim3b1.clear();
                         discrim3b2.clear();
                     } else if (answers2.get(Application.var)[0] != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
                 break;
@@ -336,17 +380,23 @@ public class ControllerAnsw {
                         discrim1k1.clear();
                         discrim1k2.clear();
                     } else if (answers3.get(Application.var)[0] != 1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
 
@@ -356,17 +406,23 @@ public class ControllerAnsw {
                         loadnexttask();
                         discrim2k.clear();
                     } else if (answers3.get(Application.var)[0] != 0) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
 
@@ -378,17 +434,23 @@ public class ControllerAnsw {
                         discrim3b1.clear();
                         discrim3b2.clear();
                     } else if (answers3.get(Application.var)[0] != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ1");
+                            err.setContentText("Правильно определен вид характеристического уравнения, неправильно найдены корни");
+                            err.show();
+                        }
                     }
                 }
                 break;
@@ -401,39 +463,56 @@ public class ControllerAnsw {
                         discrim1k1.clear();
                         discrim1k2.clear();
                     } else if (answers4.get(Application.var)[0] != 1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution4.isrightsel && ControllerSolution4.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
+
                     } else if(!(Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[1])
                     && (ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
+
                     } else if(!(ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1
                     && (Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers4.get(Application.var)[1])
                     && !(ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -445,39 +524,54 @@ public class ControllerAnsw {
                         loadnexttask();
                         discrim2k.clear();
                     } else if (answers4.get(Application.var)[0] != 0) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution4.isrightsel && ControllerSolution4.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim2k.getText()) == answers4.get(Application.var)[1])
                             && (ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim2k.getText()) == answers4.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers4.get(Application.var)[1])
                             && !(ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -491,39 +585,54 @@ public class ControllerAnsw {
                         discrim3b1.clear();
                         discrim3b2.clear();
                     } else if (answers4.get(Application.var)[0] != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution4.isrightsel && ControllerSolution4.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim3a.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers4.get(Application.var)[2])
                             && (ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution4.sel == ControllerSolution4.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim3a.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers4.get(Application.var)[2])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers4.get(Application.var)[1])
                             && !(Integer.parseInt(discrim3a.getText()) == answers4.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers4.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers4.get(Application.var)[2])){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
                 break;
@@ -536,39 +645,54 @@ public class ControllerAnsw {
                         discrim1k1.clear();
                         discrim1k2.clear();
                     } else if (answers5.get(Application.var)[0] != 1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution5.isrightsel && ControllerSolution5.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[1])
                             && (ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers5.get(Application.var)[1])
                             && !(ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution5.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -580,39 +704,54 @@ public class ControllerAnsw {
                         loadnexttask();
                         discrim2k.clear();
                     } else if (answers5.get(Application.var)[0] != 0) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution5.isrightsel && ControllerSolution5.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim2k.getText()) == answers5.get(Application.var)[1])
                             && (ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim2k.getText()) == answers5.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers5.get(Application.var)[1])
                             && !(ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution5.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -626,39 +765,54 @@ public class ControllerAnsw {
                         discrim3b1.clear();
                         discrim3b2.clear();
                     } else if (answers5.get(Application.var)[0] != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution5.isrightsel && ControllerSolution5.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim3a.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers5.get(Application.var)[2])
                             && (ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution5.sel == ControllerSolution5.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim3a.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers5.get(Application.var)[2])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers5.get(Application.var)[1])
                             && !(Integer.parseInt(discrim3a.getText()) == answers5.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers5.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers5.get(Application.var)[2])){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
                 break;
@@ -671,39 +825,54 @@ public class ControllerAnsw {
                         discrim1k1.clear();
                         discrim1k2.clear();
                     } else if (answers6.get(Application.var)[0] != 1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution6.isrightsel && ControllerSolution6.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[1])
                             && (ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[2] || Integer.parseInt(discrim1k1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim1k2.getText()) == answers6.get(Application.var)[1])
                             && !(ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution6.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -715,39 +884,54 @@ public class ControllerAnsw {
                         loadnexttask();
                         discrim2k.clear();
                     } else if (answers6.get(Application.var)[0] != 0) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        }
                     } else if (!ControllerSolution6.isrightsel && ControllerSolution6.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim2k.getText()) == answers6.get(Application.var)[1])
                             && (ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim2k.getText()) == answers6.get(Application.var)[1])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers6.get(Application.var)[1])
                             && !(ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution6.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
 
@@ -761,39 +945,54 @@ public class ControllerAnsw {
                         discrim3b1.clear();
                         discrim3b2.clear();
                     } else if (answers6.get(Application.var)[0] != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид характеристического уравнения");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид характеристического уравнения");
+                            err.show();
+                        };
                     } else if (!ControllerSolution6.isrightsel && ControllerSolution6.sel != -1) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно определен вид правой части ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно определен вид правой части ЛНДУ");
+                            err.show();
+                        }
                     } else if(!(Integer.parseInt(discrim3a.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers6.get(Application.var)[2])
                             && (ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ");
+                            err.show();
+                        }
                     } else if(!(ControllerSolution6.sel == ControllerSolution6.randansw.get(0)) && ControllerSolution4.sel != -1
                             && (Integer.parseInt(discrim3a.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers6.get(Application.var)[2])) {
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено частное решение");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено частное решение");
+                            err.show();
+                        }
 
                     } else if (!(Integer.parseInt(discrim2k.getText()) == answers6.get(Application.var)[1])
                             && !(Integer.parseInt(discrim3a.getText()) == answers6.get(Application.var)[1] && Integer.parseInt(discrim3b1.getText()) == answers6.get(Application.var)[2] && Integer.parseInt(discrim3b2.getText()) == answers6.get(Application.var)[2])){
-                        Alert err = new Alert(Alert.AlertType.ERROR);
-                        err.setTitle("Неправильный ответ");
-                        err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
-                        err.show();
                         mistakecount++;
+                        if(mistakecount > 2) loadnexttask();
+                        else {
+                            Alert err = new Alert(Alert.AlertType.ERROR);
+                            err.setTitle("Неправильный ответ");
+                            err.setContentText("Неправильно найдено общее решение характеристического уравнения ЛОДУ и частное решение ЛНДУ");
+                            err.show();
+                        }
                     }
                 }
                 break;

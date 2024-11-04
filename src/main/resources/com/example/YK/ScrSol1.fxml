@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution">
+<AnchorPane prefHeight="720" prefWidth="1280" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.YK.ControllerSolution">
     <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="72.0" text="Задание 1&#10;Решить линейное однородное дифференциальное уравнение: " AnchorPane.bottomAnchor="594.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="72.0">
       <font>
          <Font name="Arial" size="20.0" />
@@ -52,6 +56,20 @@
       </children>
    </VBox>
    <Button layoutX="187.0" layoutY="340.0" mnemonicParsing="false" onAction="#a" text="Button" visible="false" />
+   <HBox alignment="TOP_RIGHT" layoutX="1012.0" layoutY="72.0" prefHeight="39.0" prefWidth="120.0" spacing="5.0" AnchorPane.bottomAnchor="658.0" AnchorPane.leftAnchor="1012.0" AnchorPane.rightAnchor="148.0" AnchorPane.topAnchor="72.0">
+      <children>
+         <Label alignment="TOP_RIGHT" text="Вариант">
+            <font>
+               <Font name="Arial" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="varlab" alignment="TOP_RIGHT" text="0">
+            <font>
+               <Font name="Arial" size="20.0" />
+            </font>
+         </Label>
+      </children>
+   </HBox>
 
 
 

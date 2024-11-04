@@ -17,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -50,11 +51,13 @@ public class ControllerSolution implements Initializable{
     protected HBox h;
     @FXML
     protected ChoiceBox<String> discrim;
+    @FXML
+    protected Label varlab;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         task1img.setImage(soltask1.get(Application.var));
+        varlab.setText(Integer.toString(Application.var));
         discrim.getItems().addAll("Вид 1", "Вид 2", "Вид 3");
-
         discrim.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
             @Override
@@ -67,8 +70,13 @@ public class ControllerSolution implements Initializable{
         });
         }
         @FXML
-    protected void a(ActionEvent event){
+        protected void a(ActionEvent event) throws IOException { //Использовалось для дебага, щас бесполезно
+        ControllerAnsw.points = 4.0f;
+        ControllerAnsw.mistakecountoverall = 4;
+        ControllerAnsw.taskscompleted = 5;
+        //Application.anc_sol.add(FXMLLoader.load(getClass().getResource("Final.fxml")));
         Application.set_anc_sol(3);
+
         ControllerAnsw.tasknow = 4;
         }
 }

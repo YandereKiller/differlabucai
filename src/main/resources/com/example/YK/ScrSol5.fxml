@@ -101,6 +101,17 @@
       </children>
    </VBox>
    <Label fx:id="test" layoutX="225.0" layoutY="319.0" prefHeight="27.0" prefWidth="56.0" text="0 0" visible="false" />
+    <Label alignment="TOP_RIGHT" layoutX="1000.0" layoutY="52.0" prefHeight="30.0" prefWidth="82.0" text="Вариант" AnchorPane.bottomAnchor="687.0" AnchorPane.leftAnchor="1000.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="52.0">
+        <font>
+            <Font name="Arial" size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="varlab" alignment="TOP_RIGHT" layoutX="1069.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0" text="0" AnchorPane.bottomAnchor="686.0" AnchorPane.leftAnchor="1069.0" AnchorPane.rightAnchor="171.0" AnchorPane.topAnchor="51.0">
+        <font>
+            <Font name="Arial" size="20.0" />
+        </font>
+    </Label>
+
 
 
 

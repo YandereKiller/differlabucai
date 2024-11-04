@@ -49,9 +49,12 @@ public class ControllerSolution3 implements Initializable {
     protected HBox h;
     @FXML
     protected ChoiceBox<String> discrim;
+    @FXML
+    protected Label varlab;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         task1img.setImage(soltask3.get(Application.var));
+        varlab.setText(Integer.toString(Application.var));
         discrim.getItems().addAll("Вид 1", "Вид 2", "Вид 3");
         discrim.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
